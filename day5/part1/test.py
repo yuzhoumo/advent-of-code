@@ -4,12 +4,13 @@ class Computer:
 
     def run(self):
         print('\n--- BEGIN EXECUTION ---\n')
-        print('TEST> LOADEDED MEMORY:', len(self.mem), 'BYTES')
+        print(self.mem)
+        print('\nTEST> LOADEDED MEMORY:', len(self.mem), 'BYTES')
         i, output = 0, []
         while i < len(self.mem):
             intcode = [0 for _ in range(5-len(str(self.mem[i])))] + [int(i) for i in str(self.mem[i])]
             opcode = intcode[3] * 10 + intcode[4]
-            print('TEST> POS', i, 'INTCODE', intcode, 'OPCODE', opcode)
+            print('TEST> PARAMS', [intcode[2], intcode[1], intcode[0]], 'OPCODE', opcode, 'POS', i)
 
             if opcode == 1:
                 self.op_one(intcode, i)
