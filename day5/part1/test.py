@@ -51,8 +51,7 @@ class Computer:
         output.append(self.get_val(intcode[2], index + 1))
 
     def end(self, output):
-        print()
-        [print('TEST> OUPUT:', out) for out in output]
+        print('\nTEST> OUTPUT:', output)
         print('\n--- END EXECUTION ---\n')
         return self.mem
 
