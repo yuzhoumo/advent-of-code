@@ -1,5 +1,5 @@
 # Advent of Code 2019
-My Python solutions for 2019 advent of code: https://adventofcode.com/
+My Python solutions for Advent of Code 2019: https://adventofcode.com/
 
 - [Day 1](/day1): The Tyranny of the Rocket Equation
     - [Part 1](/day1/part1)
