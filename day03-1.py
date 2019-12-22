@@ -1,3 +1,5 @@
+import sys
+
 class Point:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -64,42 +66,28 @@ def gen_lines(points):
 
 
 def intersects(lines1, lines2):
-    intersects, index1 = [], 0
+    intersects = []
     for i in lines1:
-        index2 = 0
         for j in lines2:
-            cross = i.get_intersect(j)
-            if cross:
-                intersects.append((cross, index1, index2))
-            index2 += 1
-        index1 += 1
+            temp = i.get_intersect(j)
+            if temp:
+                intersects.append(temp)
     return intersects
 
 
-def num_steps(lines, index):
-    visted, count = [], 0
-    for i in range(0, index):
-        #if lines[i] not in visted:
-        count += 1
-        visted.append(lines[i])
-    return count
+def closest_dist(origin, points):
+    distances = [origin.taxi_dist(p) for p in points]
+    return min(list(distances))
 
 
-def fewest_steps(lines1, lines2, intersects):
-    steps = []
-    for i in intersects:
-        n1 = num_steps(lines1, i[1])
-        n2 = num_steps(lines2, i[2])
-        steps.append(n1 + n2)
-    return sorted(steps)
+assert len(sys.argv) > 1, 'Missing argument: path to input file'
+assert len(sys.argv) < 3, 'Too many arguments'
 
-
-with open('input.txt', 'r') as f:
+with open(sys.argv[1], 'r') as f:
     wires = f.readlines()
 
 w1, w2 = wires[0].split(','), wires[1].split(',')
 L1, L2 = gen_lines(gen_points(w1)), gen_lines(gen_points(w2))
 
 intersections = intersects(L1, L2)
-
-print(fewest_steps(L1, L2, intersections))
+print(closest_dist(Point(0, 0), intersections))

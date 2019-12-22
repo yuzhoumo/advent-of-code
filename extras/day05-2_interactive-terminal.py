@@ -1,4 +1,6 @@
-class Computer:
+import sys
+
+class IntComputer:
     def __init__(self, mem):
         self.mem = list(mem)
         self.output = []
@@ -9,11 +11,11 @@ class Computer:
         print('\nTEST> LOADEDED MEMORY:', len(self.mem), 'BYTES')
         i, operations, output = 0, 0, []
         while i != len(self.mem):
-            intcode = [0 for _ in range(5-len(str(self.mem[i])))] + [int(i) for i in str(self.mem[i])]
+            intcode = [0 for _ in range(5 - len(str(self.mem[i])))] + [int(i) for i in str(self.mem[i])]
             opcode, operations = intcode[3] * 10 + intcode[4], operations + 1
             print('TEST> MODES', [intcode[2], intcode[1], intcode[0]], 'OPCODE', opcode, 'POS', i)
 
-            if opcode in range(1,9):
+            if opcode in range(1, 9):
                 i = eval('self.op_{0}(intcode, i)'.format(opcode))
             elif opcode == 99:
                 return self.op_99(operations)
@@ -81,6 +83,9 @@ class Computer:
         self.output = []
         return self.mem
 
-with open('input.txt', 'r') as f:
-    mem = [int(i) for i in f.readline().split(',')]
-    Computer(mem).run()
+
+assert len(sys.argv) > 1, 'Missing argument: path to input file'
+assert len(sys.argv) > 2, 'Too many arguments'
+
+with open(sys.argv[1], 'r') as f:
+    IntComputer([int(i) for i in f.readline().split(',')]).run()
