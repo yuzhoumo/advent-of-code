@@ -66,8 +66,7 @@ class AmpIntComputer:
         return self.output
 
 
-def amp_power(computer_memory, phase_settings):
-    output = 0
+def amp_power(computer_memory, phase_settings, output=0):
     for ps in phase_settings:
         output = AmpIntComputer(computer_memory, ps, output).run()
     return output
