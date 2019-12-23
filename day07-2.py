@@ -74,8 +74,8 @@ def amp_power(computer_memory, phase_settings):
     count = output = prev = 0
 
     while output is not None:
-        count, prev = count + 1 if count < len(amps) - 1 else 0, output
-        amps[count].input = prev
+        count = count + 1 if count < len(amps) - 1 else 0
+        amps[count].input = prev = output
         output = amps[count].run()
 
     return prev
