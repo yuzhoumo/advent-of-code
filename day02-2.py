@@ -38,7 +38,7 @@ def find_inputs(result, memory):
 
 
 assert len(sys.argv) > 1, 'Missing argument: path to input file'
-assert len(sys.argv) > 2, 'Missing argument: output number of intcomputer'
+assert len(sys.argv) > 2, 'Missing argument: output integer of IntComputer'
 assert len(sys.argv) < 4, 'Too many arguments'
 
 with open(sys.argv[1], 'r') as f:

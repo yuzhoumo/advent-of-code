@@ -30,8 +30,8 @@ class IntComputer:
 
 
 assert len(sys.argv) > 1, 'Missing argument: path to input file'
-assert len(sys.argv) > 2, 'Missing argument: intcomputer memory at index 1'
-assert len(sys.argv) > 3, 'Missing argument: intcomputer memory at index 2'
+assert len(sys.argv) > 2, 'Missing argument: IntComputer memory value at index 1'
+assert len(sys.argv) > 3, 'Missing argument: IntComputer memory value at index 2'
 assert len(sys.argv) < 5, 'Too many arguments'
 
 with open(sys.argv[1], 'r') as f:
