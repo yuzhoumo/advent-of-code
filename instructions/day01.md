@@ -22,8 +22,6 @@ The Fuel Counter-Upper needs to know the total fuel requirement. To find it, ind
 
 _What is the sum of the fuel requirements_ for all of the modules on your spacecraft?
 
-Your puzzle answer was `3353880`.
-
 \--- Part Two ---
 -----------------
 
