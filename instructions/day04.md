@@ -18,8 +18,6 @@ Other than the range rule, the following are true:
 
 _How many different passwords_ within the range given in your puzzle input meet these criteria?
 
-Your puzzle answer was `579`.
-
 \--- Part Two ---
 -----------------
 

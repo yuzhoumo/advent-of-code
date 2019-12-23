@@ -58,8 +58,6 @@ The total number of direct and indirect orbits in this example is `_42_`.
 
 _What is the total number of direct and indirect orbits_ in your map data?
 
-Your puzzle answer was `223251`.
-
 \--- Part Two ---
 -----------------
 

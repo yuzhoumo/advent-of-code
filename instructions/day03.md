@@ -46,10 +46,6 @@ Here are a few more examples:
 
 _What is the Manhattan distance_ from the central port to the closest intersection?
 
-Your puzzle answer was `260`.
-
-The first half of this puzzle is complete! It provides one gold star: \*
-
 \--- Part Two ---
 -----------------
 
