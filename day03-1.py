@@ -1,5 +1,6 @@
 import sys
 
+
 class Point:
     def __init__(self, x, y):
         self.x, self.y = x, y
@@ -17,21 +18,21 @@ class Line:
 
     def get_intersect(self, other):
         if self.a.x == self.b.x:
-            horiz = (self.a.x, tuple(sorted([self.a.y, self.b.y])))
-            vert = (other.a.y, tuple(sorted([other.a.x, other.b.x])))
+            horizontal = (self.a.x, tuple(sorted([self.a.y, self.b.y])))
+            vertical = (other.a.y, tuple(sorted([other.a.x, other.b.x])))
         else:
-            vert = (other.a.x, tuple(sorted([other.a.y, other.b.y])))
-            horiz = (self.a.y, tuple(sorted([self.a.x, self.b.x])))
+            vertical = (other.a.x, tuple(sorted([other.a.y, other.b.y])))
+            horizontal = (self.a.y, tuple(sorted([self.a.x, self.b.x])))
 
         x, y = None, None
 
-        if horiz[1][0] < vert[0] < horiz[1][1]:
-            x = vert[0]
-        if vert[1][0] < horiz[0] < vert[1][1]:
-            y = horiz[0]
+        if horizontal[1][0] < vertical[0] < horizontal[1][1]:
+            x = vertical[0]
+        if vertical[1][0] < horizontal[0] < vertical[1][1]:
+            y = horizontal[0]
 
-        if x != None and y != None:
-            return Point(x,y)
+        if x is None and y is None:
+            return Point(x, y)
 
     def __repr__(self):
         return 'L[{0} {1}]'.format(self.a, self.b)
@@ -66,13 +67,13 @@ def gen_lines(points):
 
 
 def intersects(lines1, lines2):
-    intersects = []
+    results = []
     for i in lines1:
         for j in lines2:
             temp = i.get_intersect(j)
             if temp:
-                intersects.append(temp)
-    return intersects
+                results.append(temp)
+    return results
 
 
 def closest_dist(origin, points):
