@@ -1,26 +1,33 @@
 import sys
 
 
-def test(n):
-    nums = [int(n) for n in str(n)]
-    prev, adjacent = nums[0], {i: 1 for i in range(0, 10)}
+def test(n, adj):
+    prev, n, adjacent = n % 10, n // 10, adj
 
-    for num in nums[1:]:
-        if num < prev:
+    while n:
+        d = n % 10
+        if d > prev:
             return False
-        if num == prev:
-            adjacent[num] += 1
-        prev = num
+        if d == prev:
+            adjacent[d] += 1
+        prev, n = d, n // 10
 
-    for n in adjacent.values():
-        if n == 2:
-            return True
+    if 2 in adjacent:
+        return True
     return False
+
+
+def count(lower, upper):
+    cnt, adj = 0, [1 for i in range(0, 10)]
+    for n in range(lower, upper):
+        if test(n, list(adj)):
+            cnt += 1
+    return cnt
 
 
 assert len(sys.argv) > 1, 'Missing argument: lower bound'
 assert len(sys.argv) > 2, 'Missing argument: upper bound'
 assert len(sys.argv) < 4, 'Too many arguments'
 
-lower, upper = int(sys.argv[1]), int(sys.argv[2])
-print(len([0 for n in range(lower, upper + 1) if test(n)]))
+print(count(int(sys.argv[1]), int(sys.argv[2])))
+

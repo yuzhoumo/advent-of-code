@@ -2,22 +2,29 @@ import sys
 
 
 def test(n):
-    nums = [int(n) for n in str(n)]
-    prev, adjacent = nums[0], False
+    prev, n, adjacent = n % 10, n // 10, False
 
-    for num in nums[1:]:
-        if num == prev:
-            adjacent = True
-        if num < prev:
+    while n:
+        d = n % 10
+        if d > prev:
             return False
-        prev = num
+        if d == prev:
+            adjacent = True
+        prev, n = d, n // 10
 
-    return True if adjacent else False
+    return adjacent
+
+
+def count(lower, upper):
+    cnt = 0
+    for n in range(lower, upper):
+        if test(n):
+            cnt += 1
+    return cnt
 
 
 assert len(sys.argv) > 1, 'Missing argument: lower bound'
 assert len(sys.argv) > 2, 'Missing argument: upper bound'
 assert len(sys.argv) < 4, 'Too many arguments'
 
-lower, upper = int(sys.argv[1]), int(sys.argv[2])
-print(len([0 for n in range(lower, upper + 1) if test(n)]))
+print(count(int(sys.argv[1]), int(sys.argv[2])))
