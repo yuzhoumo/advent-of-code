@@ -11,49 +11,49 @@ The solutions have been configured to take in inputs as command line arguments.
 The `run_solutions.sh` script runs and times all of the solutions. Otherwise, they
 can be run individually from terminal using the following commands:
 
-#### [Day 1](instructions/day01): The Tyranny of the Rocket Equation
+#### [Day 1](instructions/day01.md): The Tyranny of the Rocket Equation
     Part 1: python3 day01-1.py <path to input file>
             python3 day01-1.py inputs/day01.txt
 
     Part 2: python3 day01-2.py <path to input file>
             python3 day01-2.py inputs/day01.txt
 
-#### [Day 2](instructions/day02): 1202 Program Alarm
+#### [Day 2](instructions/day02.md): 1202 Program Alarm
     Part 1: python3 day02-1.py <path to input file> <int at memory index 1> <int at memory index 2>
             python3 day02-1.py inputs/day02.txt 12 2
 
     Part 2: python3 day02-2.py <path to input file> <output int>
             python3 day02-2.py inputs/day02.txt 19690720
 
-#### [Day 3](instructions/day03): Crossed Wires
+#### [Day 3](instructions/day03.md): Crossed Wires
     Part 1: python3 day03-1.py <path to input file>
             python3 day03-1.py inputs/day03.txt
 
     Part 2: python3 day03-2.py <path to input file>
             python3 day03-2.py inputs/day03.txt
 
-#### [Day 4](instructions/day04): Secure Container
+#### [Day 4](instructions/day04.md): Secure Container
     Part 1: python3 day04-1.py <path to input file> <lower bound> <upper bound>
             python3 day04-1.py 353096 843212
             
     Part 2: python3 day04-1.py <path to input file> <lower bound> <upper bound>
             python3 day04-2.py 353096 843212
 
-#### [Day 5](instructions/day05): Sunny with a Chance of Asteroids
+#### [Day 5](instructions/day05.md): Sunny with a Chance of Asteroids
     Part 1: python3 day05-1.py <path to input file> <user input>
             python3 day05-1.py inputs/day05.txt 1
 
     Part 2: python3 day05-1.py <path to input file> <user input>
             python3 day05-2.py inputs/day05.txt 5
 
-#### [Day 6](instructions/day06): Universal Orbit Map
+#### [Day 6](instructions/day06.md): Universal Orbit Map
     Part 1: python3 day06-1.py <path to input file>
             python3 day06-1.py inputs/day06.txt
 
     Part 2: python3 day06-1.py <path to input file>
             python3 day06-2.py inputs/day06.txt
 
-#### [Day 7](instructions/day07): Amplification Circuit
+#### [Day 7](instructions/day07.md): Amplification Circuit
     Part 1: python3 day07-1.py <path to input file>
             python3 day07-1.py inputs/day07.txt
 
