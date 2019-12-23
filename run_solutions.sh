@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 printf "\nAdvent of Code 2019 Solutions\n\n"
 
 printf "DAY 1 PART 1: "
