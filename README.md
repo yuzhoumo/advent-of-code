@@ -7,7 +7,7 @@ People use them as a speed contest, interview prep, company training, university
 coursework, practice problems, or to challenge each other.
 
 ## Running Solutions
-The solutions have been configured to take in inputs as command line arguments.
+The solutions have been configured to take inputs as command line arguments.
 The `run_solutions.sh` script runs and times all of the solutions. Otherwise, they
 can be run individually from terminal using the following commands:
 
