@@ -1,5 +1,6 @@
 import sys
 
+
 def calc_fuel(mass):
     fuel = mass // 3 - 2
     if fuel <= 0:

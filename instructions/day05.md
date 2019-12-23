@@ -24,10 +24,10 @@ For example, consider the program `1002,4,3,4,33`.
 
 The first instruction, `1002,4,3,4`, is a _multiply_ instruction - the rightmost two digits of the first value, `02`, indicate opcode `2`, multiplication. Then, going right to left, the parameter modes are `0` (hundreds digit), `1` (thousands digit), and `0` (ten-thousands digit, not present and therefore zero):
 
-   ABCDE
+    ABCDE
     1002
 
-   DE - two-digit opcode,      02 == opcode 2
+    DE - two-digit opcode,      02 == opcode 2
     C - mode of 1st parameter,  0 == position mode
     B - mode of 2nd parameter,  1 == immediate mode
     A - mode of 3rd parameter,  0 == position mode,
@@ -83,9 +83,9 @@ Here are some jump tests that take an input, then output `0` if the input was ze
 
 Here's a larger example:
 
-   3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,
-   1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,
-   999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99
+    3,21,1008,21,8,20,1005,20,22,107,8,21,20,1006,20,31,
+    1106,0,36,98,0,0,1002,21,125,20,4,20,1105,1,46,104,
+    999,1105,1,46,1101,1000,1,20,4,20,1105,1,46,98,99
 
 
 The above example program uses an input instruction to ask for a single number. The program will then output `999` if the input value is below `8`, output `1000` if the input value is equal to `8`, or output `1001` if the input value is greater than `8`.

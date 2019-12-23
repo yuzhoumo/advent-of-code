@@ -1,5 +1,6 @@
 import sys
 
+
 class Tree:
     def __init__(self, label, branches=[], parent=None):
         self.label = label

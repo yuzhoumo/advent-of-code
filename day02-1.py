@@ -1,5 +1,6 @@
 import sys
 
+
 class IntComputer:
     def __init__(self, memory):
         self.memory = list(memory)

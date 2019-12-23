@@ -1,5 +1,6 @@
 import sys
 
+
 def test(n):
     nums = [int(n) for n in str(n)]
     prev, adjacent = nums[0], False
