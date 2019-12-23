@@ -31,7 +31,7 @@ class Line:
         if vertical[1][0] < horizontal[0] < vertical[1][1]:
             y = horizontal[0]
 
-        if x is None and y is None:
+        if x is not None and y is not None:
             return Point(x, y)
 
     def __repr__(self):
@@ -39,7 +39,7 @@ class Line:
 
 
 def gen_points(wire):
-    points = [Point(0,0)]
+    points = [Point(0, 0)]
 
     for d in wire:
         prev_x, prev_y = points[-1].x, points[-1].y
