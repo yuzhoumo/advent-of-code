@@ -24,3 +24,11 @@ def profile(func):
         return result
 
     return inner
+
+
+@profile
+def test():
+    pass  # Replace with code to test efficiency
+
+
+test()
