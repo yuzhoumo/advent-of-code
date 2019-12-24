@@ -1,15 +1,21 @@
 # Advent of Code 2019
 My solutions for [Advent of Code 2019](https://adventofcode.com/) written in Python
 
-Advent of Code is an Advent calendar of small programming puzzles for a variety of
-skill sets and skill levels that can be solved in any programming language you like.
+Advent of Code is an Advent calendar of programming puzzles for a variety of
+skill sets and skill levels that can be solved in any preferred programming language.
 People use them as a speed contest, interview prep, company training, university
 coursework, practice problems, or to challenge each other.
 
-## Running Solutions
-The solutions have been configured to take inputs as command line arguments.
-The `run_solutions.sh` script runs and times all of the solutions. Otherwise, they
-can be run individually from terminal using the following commands:
+## Visualized Solutions
+A few of the solutions have been modified to show what's going on behind the scenes.
+Humans are visual creatures, and these are more fun to look at.
+
+    Coming soon
+
+## Command Line Solutions
+These solutions have been configured to take inputs as command line arguments. Use
+`sh run_solutions.sh` to run them all at once. Otherwise, they can be run individually
+from terminal using the following commands:
 
 #### [Day 1](instructions/day01.md): The Tyranny of the Rocket Equation
     Part 1: python3 day01-1.py <path to input file>
