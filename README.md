@@ -59,3 +59,113 @@ can be run individually from terminal using the following commands:
 
     Part 2: python3 day07-2.py <path to input file>
             python3 day07-2.py inputs/day07.txt
+
+#### [Day 8](instructions/day08.md): Space Image Format
+    Part 1: python3 day08-1.py <path to input file> <image x dimension> <image y dimension>
+            python3 day08-1.py inputs/day08.txt 25 6
+
+    Part 2: python3 day08-2.py <path to input file> <image x dimension> <image y dimension>
+            python3 day08-2.py inputs/day08.txt 25 6
+
+#### [Day 9](instructions/day09.md): Sensor Boost
+    Part 1: python3 day09-1.py <path to input file>
+            python3 day09-1.py inputs/day09.txt
+
+    Part 2: python3 day09-2.py <path to input file>
+            python3 day09-2.py inputs/day09.txt
+
+#### [Day 10](instructions/day10.md): (Work in Progress)
+    Part 1: python3 day10-1.py <path to input file>
+            python3 day10-1.py inputs/day10.txt
+    Part 2: python3 day10-2.py <path to input file>
+            python3 day10-2.py inputs/day10.txt
+
+#### [Day 11](instructions/day11.md): (Work in Progress)
+	Part 1: python3 day11-1.py <path to input file>
+            python3 day11-1.py inputs/day11.txt
+	Part 2: python3 day11-2.py <path to input file>
+            python3 day11-2.py inputs/day11.txt
+
+#### [Day 12](instructions/day12.md): (Work in Progress)
+	Part 1: python3 day12-1.py <path to input file>
+            python3 day12-1.py inputs/day12.txt
+	Part 2: python3 day12-2.py <path to input file>
+            python3 day12-2.py inputs/day12.txt
+
+#### [Day 13](instructions/day13.md): (Work in Progress)
+	Part 1: python3 day13-1.py <path to input file>
+            python3 day13-1.py inputs/day13.txt
+	Part 2: python3 day13-2.py <path to input file>
+            python3 day13-2.py inputs/day13.txt
+
+#### [Day 14](instructions/day14.md): (Work in Progress)
+	Part 1: python3 day14-1.py <path to input file>
+            python3 day14-1.py inputs/day14.txt
+	Part 2: python3 day14-2.py <path to input file>
+            python3 day14-2.py inputs/day14.txt
+
+#### [Day 15](instructions/day15.md): (Work in Progress)
+	Part 1: python3 day15-1.py <path to input file>
+            python3 day15-1.py inputs/day15.txt
+	Part 2: python3 day15-2.py <path to input file>
+            python3 day15-2.py inputs/day15.txt
+
+#### [Day 16](instructions/day16.md): (Work in Progress)
+	Part 1: python3 day16-1.py <path to input file>
+            python3 day16-1.py inputs/day16.txt
+	Part 2: python3 day16-2.py <path to input file>
+            python3 day16-2.py inputs/day16.txt
+
+#### [Day 17](instructions/day17.md): (Work in Progress)
+	Part 1: python3 day17-1.py <path to input file>
+            python3 day17-1.py inputs/day17.txt
+	Part 2: python3 day17-2.py <path to input file>
+            python3 day17-2.py inputs/day17.txt
+
+#### [Day 18](instructions/day18.md): (Work in Progress)
+	Part 1: python3 day18-1.py <path to input file>
+            python3 day18-1.py inputs/day18.txt
+	Part 2: python3 day18-2.py <path to input file>
+            python3 day18-2.py inputs/day18.txt
+
+#### [Day 19](instructions/day19.md): (Work in Progress)
+	Part 1: python3 day19-1.py <path to input file>
+	        python3 day19-1.py inputs/day19.txt
+	Part 2: python3 day19-2.py <path to input file>
+            python3 day19-2.py inputs/day19.txt
+
+#### [Day 20](instructions/day20.md): (Work in Progress)
+	Part 1: python3 day20-1.py <path to input file>
+            python3 day20-1.py inputs/day20.txt
+	Part 2: python3 day20-2.py <path to input file>
+            python3 day20-2.py inputs/day20.txt
+
+#### [Day 21](instructions/day21.md): (Work in Progress)
+	Part 1: python3 day21-1.py <path to input file>
+            python3 day21-1.py inputs/day21.txt
+	Part 2: python3 day21-2.py <path to input file>
+            python3 day21-2.py inputs/day21.txt
+
+#### [Day 22](instructions/day22.md): (Work in Progress)
+	Part 1: python3 day22-1.py <path to input file>
+            python3 day22-1.py inputs/day22.txt
+	Part 2: python3 day22-2.py <path to input file>
+            python3 day22-2.py inputs/day22.txt
+
+#### [Day 23](instructions/day23.md): (Work in Progress)
+	Part 1: python3 day23-1.py <path to input file>
+            python3 day23-1.py inputs/day23.txt
+	Part 2: python3 day23-2.py <path to input file>
+            python3 day23-2.py inputs/day23.txt
+
+#### [Day 24](instructions/day24.md): (Work in Progress)
+	Part 1: python3 day24-1.py <path to input file>
+            python3 day24-1.py inputs/day24.txt
+	Part 2: python3 day24-2.py <path to input file>
+            python3 day24-2.py inputs/day24.txt
+
+#### [Day 25](instructions/day25.md): (Work in Progress)
+	Part 1: python3 day25-1.py <path to input file>
+            python3 day25-1.py inputs/day25.txt
+	Part 2: python3 day25-2.py <path to input file>
+            python3 day25-2.py inputs/day25.txt
