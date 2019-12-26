@@ -6,11 +6,11 @@ skill sets and skill levels that can be solved in any preferred programming
 language. People use them as a speed contest, interview prep, company training,
 university coursework, practice problems, or to challenge each other.
 
-## Command Line Solutions
+## Solutions
 These solutions have been configured to take inputs as command line arguments.
 Use `sh run_solutions.sh` to run them all at once, or run them individually
-using the command found in the readme for that solution. Unit tests can also be
-run all at once using `sh run_tests.sh` or individually.
+using the command found in the readme for that solution. All unit tests can also
+be run at once using `sh run_tests.sh` or run individually.
 
 * [Day 1](day01): The Tyranny of the Rocket Equation
 * [Day 2](day02): 1202 Program Alarm
@@ -21,9 +21,4 @@ run all at once using `sh run_tests.sh` or individually.
 * [Day 7](day07): Amplification Circuit
 * [Day 8](day08): Space Image Format
 * [Day 9](day09): Sensor Boost
-
-## Visualized Solutions
-A few of the solutions have been modified to show what's going on behind the
-scenes. Humans are visual creatures, and these solutions are more fun to look at.
-
-* [Extras](extras): Miscellaneous Files and Visualized Solutions
+* [Extras](extras): Miscellaneous Files
