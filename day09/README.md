@@ -1,10 +1,10 @@
 # Day 9: Sensor Boost
 
-    Part 1: python3 day09_1.py <path to input file>
-            python3 day09_1.py ../inputs/day09.txt
+    Part 1: python3 day09_1.py <path to input file> <user inputs>
+            python3 day09_1.py ../inputs/day09.txt 1
 
     Part 2: python3 day09_2.py <path to input file>
-            python3 day09_2.py ../inputs/day09.txt
+            python3 day09_2.py ../inputs/day09.txt 2
 
     Tests:  python3 day09_test.py
 
@@ -22,7 +22,7 @@ The important difference is that relative mode parameters don't count from addre
 
 The address a relative mode parameter refers to is itself _plus_ the current _relative base_. When the relative base is `0`, relative mode parameters and position mode parameters with the same value refer to the same address.
 
-For example, given a relative base of `50`, a relative mode parameter of `-7` refers to memory address `50 + -7 = _43_`.
+For example, given a relative base of `50`, a relative mode parameter of `-7` refers to memory address `50 + -7 = 43`.
 
 The relative base is modified with the _relative base offset_ instruction:
 
