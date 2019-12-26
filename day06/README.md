@@ -1,10 +1,12 @@
 # Day 6: Universal Orbit Map
 
     Part 1: python3 day06_1.py <path to input file>
-            python3 day06_1.py inputs/day06.txt
+            python3 day06_1.py ../inputs/day06.txt
 
     Part 2: python3 day06_1.py <path to input file>
-            python3 day06_2.py inputs/day06.txt
+            python3 day06_2.py ../inputs/day06.txt
+
+    Tests:  python3 day06_test.py
 
 You've landed at the Universal Orbit Map facility on Mercury. Because navigation in space often involves transferring between orbits, the orbit maps here are useful for finding efficient routes between, for example, you and Santa. You download a map of the local orbits (your puzzle input).
 
@@ -59,7 +61,7 @@ Here, we can count the total number of orbits as follows:
 *   `L` directly orbits `K` and indirectly orbits `J`, `E`, `D`, `C`, `B`, and `COM`, a total of `7` orbits.
 *   `COM` orbits nothing.
 
-The total number of direct and indirect orbits in this example is `_42_`.
+The total number of direct and indirect orbits in this example is `42`.
 
 _What is the total number of direct and indirect orbits_ in your map data?
 

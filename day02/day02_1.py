@@ -34,6 +34,7 @@ class IntComputer:
                 return self.op_99()
             else:
                 raise ValueError('Unknown opcode: {0}'.format(self.memory[self.ptr]))
+        return self.op_99()
 
     def op_1(self, a, b, c):  # opcode 1: addition operation
         self.memory[c] = self.memory[a] + self.memory[b]

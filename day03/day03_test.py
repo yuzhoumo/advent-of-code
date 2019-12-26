@@ -1,5 +1,6 @@
 import unittest
 import day03_1 as p1
+import day03_2 as p2
 
 
 class TestDay3(unittest.TestCase):

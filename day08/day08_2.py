@@ -74,7 +74,7 @@ class Layer:  # Stores x, y dimensions, list of raw digits, and 2d list of layer
                 elif pixel == 2:  # Transparent pixel
                     result += ' '
             result += '\n'
-        return result.strip()
+        return result.strip('\n')
 
 
 def main():

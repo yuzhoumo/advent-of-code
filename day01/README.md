@@ -1,10 +1,12 @@
 # Day 1: The Tyranny of the Rocket Equation
 
     Part 1: python3 day01_1.py <path to input file>
-            python3 day01_1.py inputs/day01.txt
+            python3 day01_1.py ../inputs/day01.txt
 
     Part 2: python3 day01_2.py <path to input file>
-            python3 day01_2.py inputs/day01.txt
+            python3 day01_2.py ../inputs/day01.txt
+ 
+    Tests:  python3 day01_test.py
 
 Santa has become stranded at the edge of the Solar System while delivering presents to other planets! To accurately calculate his position in space, safely align his warp drive, and return to Earth in time to save Christmas, he needs you to bring him measurements from _fifty stars_.
 

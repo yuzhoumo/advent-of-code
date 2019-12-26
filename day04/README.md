@@ -6,6 +6,8 @@
     Part 2: python3 day04_1.py <path to input file> <lower bound> <upper bound>
             python3 day04_2.py 353096 843212
 
+    Tests:  python3 day04_test.py
+
 You arrive at the Venus fuel depot only to discover it's protected by a password. The Elves had written the password on a sticky note, but someone threw it out.
 
 However, they do remember a few key facts about the password:

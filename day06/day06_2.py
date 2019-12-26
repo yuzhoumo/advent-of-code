@@ -31,7 +31,6 @@ def make_map(tree, orbits, poi=[]):
             if orbit[1] in poi:  # Replaces string with node indicated by string when the node is created
                 poi.remove(orbit[1])
                 poi.append(new_node)
-            orbits.remove(orbit)
     for b in tree.branches:
         make_map(b, orbits, poi)
 

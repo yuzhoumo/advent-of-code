@@ -1,10 +1,12 @@
 # Day 3: Crossed Wires
 
     Part 1: python3 day03_1.py <path to input file>
-            python3 day03_1.py inputs/day03.txt
+            python3 day03_1.py ../inputs/day03.txt
 
     Part 2: python3 day03_2.py <path to input file>
-            python3 day03_2.py inputs/day03.txt
+            python3 day03_2.py ../inputs/day03.txt
+
+    Tests:  python3 day03_test.py
 
 The gravity assist was successful, and you're well on your way to the Venus refuelling station. During the rush back on Earth, the fuel management system wasn't completely installed, so that's next on the priority list.
 

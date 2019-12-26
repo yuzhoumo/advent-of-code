@@ -1,10 +1,12 @@
 # Day 5: Sunny with a Chance of Asteroids
 
     Part 1: python3 day05_1.py <path to input file> <user input>
-            python3 day05_1.py inputs/day05.txt 1
+            python3 day05_1.py ../inputs/day05.txt 1
 
     Part 2: python3 day05_1.py <path to input file> <user input>
-            python3 day05_2.py inputs/day05.txt 5
+            python3 day05_2.py ../inputs/day05.txt 5
+
+    Tests:  python3 day05_test.py
 
 You're starting to sweat as the ship makes its way toward Mercury. The Elves suggest that you get the air conditioner working by upgrading your ship computer to support the Thermal Environment Supervision Terminal.
 
