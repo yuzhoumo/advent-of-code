@@ -24,6 +24,12 @@ for i in {1..9}; do printf "DAY $i PART 1: "
     printf "\nDAY 8 PART 2:\n\n"
     time python3 day08/day08_2.py inputs/day08.txt 25 6
 
+  elif [ $i -eq 9 ]; then
+    printf "\n\n"
+    time python3 day09/day09_1.py inputs/day09.txt 1
+    printf "\nDAY 9 PART 2:\n\n"
+    time python3 day09/day09_1.py inputs/day09.txt 2
+
   else
     time python3 day0$i/day0$i\_1.py inputs/day0$i.txt
     printf "\nDAY $i PART 2: "
