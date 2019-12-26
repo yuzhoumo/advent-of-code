@@ -23,7 +23,8 @@ code. What is the diagnostic code for system ID 5? """
 
 class IntComputer:
     def __init__(self, user_inputs, memory):  # user_inputs is a list of ints popped from each time input is needed
-        self.inputs, self.memory, self.ptr = user_inputs, list(memory), 0  # self.ptr is memory pointer
+        self.memory, self.ptr = list(memory), 0  # self.ptr is memory pointer
+        self.inputs, self.outputs = list(user_inputs), []
 
     def run(self):
         while self.memory[self.ptr] != 99:
@@ -49,8 +50,9 @@ class IntComputer:
         print('INPUT>', num)
 
     def op_4(self, code):  # opcode 4: outputs integer
-        print('OUTPUT', self.val(code[2], self.ptr + 1))
-        self.ptr += 2
+        output, self.ptr = self.val(code[2], self.ptr + 1), self.ptr + 2
+        print('OUTPUT', output)
+        self.outputs.append(output)
 
     def op_5(self, code):  # opcode 5: if param a != 0, sets pointer position to param b
         if self.val(code[2], self.ptr + 1) != 0:
@@ -79,7 +81,7 @@ class IntComputer:
         self.ptr += 4
 
     def op_99(self):  # opcode 99: end
-        return self.memory
+        return self.outputs
 
 
 def main():

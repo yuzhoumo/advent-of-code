@@ -44,10 +44,11 @@ what diagnostic code does the program produce? """
 
 class IntComputer:
     def __init__(self, user_inputs, memory):  # user_inputs is a list of ints popped from each time input is needed
-        self.inputs, self.memory, self.ptr = list(user_inputs), list(memory), 0  # self.ptr is memory pointer
+        self.memory, self.ptr = list(memory), 0  # self.ptr is memory pointer
+        self.inputs = list(user_inputs)
 
     def run(self):
-        while self.memory[self.ptr] != 99:
+        while self.ptr < len(self.memory) and self.memory[self.ptr] != 99:
             buffer = [0 for _ in range(5 - len(str(self.memory[self.ptr])))]
             code = buffer + [int(i) for i in str(self.memory[self.ptr])]
             exec('self.op_{0}(code)'.format(code[4]))  # Executes specified opcode
@@ -70,8 +71,8 @@ class IntComputer:
         print('INPUT>', num)
 
     def op_4(self, code):  # opcode 4: outputs integer
-        print('OUTPUT', self.val(code[2], self.ptr + 1))
-        self.ptr += 2
+        output, self.ptr = self.val(code[2], self.ptr + 1), self.ptr + 2
+        print('OUTPUT', output)
 
     def op_99(self):  # opcode 99: end
         return self.memory

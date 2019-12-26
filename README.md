@@ -8,8 +8,9 @@ university coursework, practice problems, or to challenge each other.
 
 ## Command Line Solutions
 These solutions have been configured to take inputs as command line arguments.
-Use the shell script `sh run_solutions.sh` to run them all at once, or run them
-individually using the command found in the readme for that solution.
+Use `sh run_solutions.sh` to run them all at once, or run them individually
+using the command found in the readme for that solution. Unit tests can also be
+run all at once using `sh run_tests.sh` or individually.
 
 * [Day 1](day01): The Tyranny of the Rocket Equation
 * [Day 2](day02): 1202 Program Alarm

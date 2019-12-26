@@ -31,6 +31,7 @@ class IntComputer:
                 return self.op_99()
             else:
                 raise ValueError('Unknown opcode: {0}'.format(self.memory[self.ptr]))
+        return self.op_99()
 
     def op_1(self, a, b, c):  # opcode 1: addition operation
         self.memory[c] = self.memory[a] + self.memory[b]
@@ -43,6 +44,7 @@ class IntComputer:
 
 
 def find_inputs(result, memory):  # Finds inputs to IntComputer that cause it to yield result
+    memory = list(memory)
     for input1 in range(0, 100):  # Inputs can be only values from 1-99
         for input2 in range(0, 100):
             memory[1], memory[2] = input1, input2  # Sets inputs by mutating memory at indices 1 and 2

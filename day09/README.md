@@ -1,10 +1,12 @@
 # Day 9: Sensor Boost
 
     Part 1: python3 day09_1.py <path to input file>
-            python3 day09_1.py inputs/day09.txt
+            python3 day09_1.py ../inputs/day09.txt
 
     Part 2: python3 day09_2.py <path to input file>
-            python3 day09_2.py inputs/day09.txt
+            python3 day09_2.py ../inputs/day09.txt
+
+    Tests:  python3 day09_test.py
 
 You've just said goodbye to the rebooted rover and left Mars when you receive a faint distress signal coming from the asteroid belt. It must be the Ceres monitoring station!
 

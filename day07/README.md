@@ -1,10 +1,12 @@
 # Day 7: Amplification Circuit
 
     Part 1: python3 day07_1.py <path to input file>
-            python3 day07_1.py inputs/day07.txt
+            python3 day07_1.py ../inputs/day07.txt
 
     Part 2: python3 day07_2.py <path to input file>
-            python3 day07_2.py inputs/day07.txt
+            python3 day07_2.py ../inputs/day07.txt
+
+    Tests:  python3 day07_test.py
 
 Based on the navigational maps, you're going to need to send more power to your ship's thrusters to reach Santa in time. To do this, you'll need to configure a series of [amplifiers](https://en.wikipedia.org/wiki/Amplifier) already installed on the ship.
 

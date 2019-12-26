@@ -1,10 +1,12 @@
 # Day 2: 1202 Program Alarm
 
     Part 1: python3 day02_1.py <path to input file> <int at memory index 1> <int at memory index 2>
-            python3 day02_1.py inputs/day02.txt
+            python3 day02_1.py ../inputs/day02.txt 12 2
 
     Part 2: python3 day02_2.py <path to input file> <output int>
-            python3 day02_2.py inputs/day02.txt 19690720
+            python3 day02_2.py ../inputs/day02.txt 19690720
+ 
+    Tests:  python3 day02_test.py
 
 On the way to your [gravity assist](https://en.wikipedia.org/wiki/Gravity_assist) around the Moon, your ship computer beeps angrily about a "[1202 program alarm](https://www.hq.nasa.gov/alsj/a11/a11.landing.html#1023832)". On the radio, an Elf is already explaining how to handle the situation: "Don't worry, that's perfectly norma--" The ship computer [bursts into flames](https://en.wikipedia.org/wiki/Halt_and_Catch_Fire).
 

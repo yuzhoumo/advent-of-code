@@ -1,10 +1,12 @@
 # Day 8: Space Image Format
 
     Part 1: python3 day08_1.py <path to input file> <image x dimension> <image y dimension>
-            python3 day08_1.py inputs/day08.txt 25 6
+            python3 day08_1.py ../inputs/day08.txt 25 6
 
     Part 2: python3 day08_2.py <path to input file> <image x dimension> <image y dimension>
-            python3 day08_2.py inputs/day08.txt 25 6
+            python3 day08_2.py ../inputs/day08.txt 25 6
+
+    Tests:  python3 day08_test.py
 
 The Elves' spirits are lifted when they realize you have an opportunity to reboot one of their Mars rovers, and so they are curious if you would spend a brief sojourn on Mars. You land your ship near the rover.
 
