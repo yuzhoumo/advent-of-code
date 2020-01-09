@@ -7,10 +7,9 @@ language. People use them as a speed contest, interview prep, company training,
 university coursework, practice problems, or to challenge each other.
 
 ## Solutions
-These solutions have been configured to take inputs as command line arguments.
-Use `sh run_solutions.sh` to run them all at once, or run them individually
-using the command found in the readme for that solution. All unit tests can also
-be run at once using `sh run_tests.sh` or run individually.
+Use `sh run_solutions.sh` to run them all solutions at once, or run them
+individually using the command found in the readme for that solution. All unit
+tests can also be run at once using `sh run_tests.sh` or run individually.
 
 * [Day 1](day01): The Tyranny of the Rocket Equation
 * [Day 2](day02): 1202 Program Alarm
