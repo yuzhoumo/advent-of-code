@@ -1,10 +1,9 @@
 # Advent of Code 2019
 My Python solutions for [Advent of Code 2019](https://adventofcode.com/)
 
-Advent of Code is an Advent calendar of programming puzzles for a variety of
-skill sets and skill levels that can be solved in any preferred programming
-language. People use them as a speed contest, interview prep, company training,
-university coursework, practice problems, or to challenge each other.
+About: "Advent of Code is an Advent calendar of small programming puzzles for
+a variety of skill sets and skill levels that can be solved in any programming
+language you like."
 
 ## Solutions
 Use `sh run_solutions.sh` to run them all solutions at once, or run them
