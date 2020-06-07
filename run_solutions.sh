@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 printf "\nAdvent of Code 2019 Solutions\n\n"
 
-for i in {1..9}; do printf "DAY $i PART 1: "
+for i in {1..10}; do printf "DAY $i PART 1: "
 
   if [ $i -eq 2 ]; then
     time python3 day02/day02_1.py inputs/day02.txt 12 2
@@ -30,9 +30,14 @@ for i in {1..9}; do printf "DAY $i PART 1: "
     printf "\nDAY 9 PART 2:\n\n"
     time python3 day09/day09_1.py inputs/day09.txt 2
 
-  else
+  elif [ $i -lt 10 ]; then
     time python3 day0$i/day0$i\_1.py inputs/day0$i.txt
     printf "\nDAY $i PART 2: "
     time python3 day0$i/day0$i\_2.py inputs/day0$i.txt
+
+  else
+    time python3 day$i/day$i\_1.py inputs/day$i.txt
+    printf "\nDAY $i PART 2: "
+    time python3 day$i/day$i\_2.py inputs/day$i.txt
 
   fi; printf "\n"; done

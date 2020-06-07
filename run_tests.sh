@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 printf "\nAdvent of Code 2019 Unit Tests\n\n"
 
-for i in {1..9}
+for i in {1..10}
 do
   printf "DAY $i: "
   if [ $i -lt 10 ]
