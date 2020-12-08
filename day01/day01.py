@@ -41,9 +41,8 @@ def main():
     part1 = twosum_mul(nums, 2020)
     part2 = threesum_mul(nums, 2020)
 
-    print('\nInput:', nums)
     print('\nPart 1:', part1)
-    print('\nPart 2:', part2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':

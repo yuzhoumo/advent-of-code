@@ -108,9 +108,8 @@ def main():
     part1 = sum(1 for p in passports if is_valid_weak(p))
     part2 = sum(1 for p in passports if is_valid_strong(p))
 
-    print('\nInput:\n{0}'.format(text))
     print('\nPart 1:', part1)
-    print('\nPart 2:', part2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':

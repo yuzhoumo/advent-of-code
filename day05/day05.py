@@ -58,9 +58,8 @@ def main():
     part1 = max(seat_ids)
     part2 = get_missing(seat_ids)
 
-    print('\nInput:\n{0}'.format(text))
     print('\nPart 1:', part1)
-    print('\nPart 2:', part2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':
