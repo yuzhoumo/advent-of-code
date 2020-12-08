@@ -3,8 +3,16 @@ import re
 
 # Part 1
 def is_valid_weak(passport):
+    """
+    Perform a weak check given a string representing the contents
+    of a passport. Returns true if all required fields are present,
+    False otherwise.
+    """
 
+    # Names of required fields
     required = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+
+    # Split the passport fields
     p = re.compile('[:\n ]')
     tokens = set(p.split(passport))
 
@@ -17,10 +25,18 @@ def is_valid_weak(passport):
 
 # Part 2
 def is_valid_strong(passport):
+    """
+    Perform a strong check given a string representing the contents
+    of a passport. Returns true if all required fields are present and
+    content of each field is valid, False otherwise.
+    """
 
+    # Used to ensure that each field appears exactly once
+    counts = [0, 0, 0, 0, 0, 0, 0]
+
+    # Split the password fields
     p = re.compile('[:\n ]')
     tokens = p.split(passport)
-    counts = [0, 0, 0, 0, 0, 0, 0]
 
     for i in range(0, len(tokens), 2):
 
@@ -88,12 +104,13 @@ def main():
         text = f.read().strip()
         passports = text.split('\n\n')
 
-    # Counter function
-    num_valid = lambda data, func: sum(1 for d in data if func(d))
+    # Solve parts 1 and 2
+    part1 = sum(1 for p in passports if is_valid_weak(p))
+    part2 = sum(1 for p in passports if is_valid_strong(p))
 
     print('\nInput:\n{0}'.format(text))
-    print('\nPart 1:', num_valid(passports, is_valid_weak))
-    print('\nPart 2:', num_valid(passports, is_valid_strong))
+    print('\nPart 1:', part1)
+    print('\nPart 2:', part2)
 
 
 if __name__ == '__main__':

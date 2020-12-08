@@ -3,7 +3,14 @@ import re
 
 # Part 1
 def count_yes(answers):
+    """
+    Return the total number of questions that had a 'yes'
+    answer, i.e. return the number of unique characters in
+    `answers` excluding newlines.
+    """
+
     answer_set = set()
+
     for c in answers.replace('\n', ''):
         answer_set.add(c)
 
@@ -12,6 +19,13 @@ def count_yes(answers):
 
 # Part 2
 def count_all_yes(answers):
+    """
+    Return the total number of questions in which all members of
+    the group answered 'yes' to. i.e. return the number of chars
+    that are common across all of the line-separated segments of
+    `answers`.
+    """
+
     cnt, answer_dict, group = 0, {}, answers.splitlines()
 
     for answer_set in group:
@@ -20,7 +34,7 @@ def count_all_yes(answers):
                 answer_dict[a] += 1
             else:
                 answer_dict[a] = 1
-            
+
             if answer_dict[a] == len(group):
                 cnt += 1
 
@@ -36,9 +50,13 @@ def main():
         text = f.read().strip()
         answers = text.split('\n\n')
 
+    # Solve for parts 1 and 2
+    part1 = sum(count_yes(a) for a in answers)
+    part2 = sum(count_all_yes(a) for a in answers)
+
     print('\nInput:\n{0}'.format(text))
-    print('\nPart 1:', sum(count_yes(a) for a in answers))
-    print('\nPart 2:', sum(count_all_yes(a) for a in answers))
+    print('\nPart 1:', part1)
+    print('\nPart 2:', part2)
 
 
 if __name__ == '__main__':
