@@ -1,5 +1,4 @@
 import sys
-import re
 
 # Part 1
 def count_trees(grid, rise, run):
@@ -39,6 +38,7 @@ def main():
     slopes = [(1, 1), (1, 3), (1, 5), (1, 7), (2, 1)]
 
     print('\nPart 2:', count_product(rows, slopes))
+
 
 if __name__ == '__main__':
     main()
