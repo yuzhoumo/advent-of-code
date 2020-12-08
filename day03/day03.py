@@ -49,9 +49,8 @@ def main():
     part1 = count_trees(grid, 1, 3)
     part2 = count_product(grid, [(1, 1), (1, 3), (1, 5), (1, 7), (2, 1)])
 
-    print('\nInput:\n{0}'.format(text))
     print('\nPart 1:', part1)
-    print('\nPart 2:', part2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':

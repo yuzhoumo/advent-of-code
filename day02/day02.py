@@ -50,9 +50,8 @@ def main():
     part1 = sum(1 for r in rules if is_valid_count(r))
     part2 = sum(1 for r in rules if is_valid_index(r))
 
-    print('\nInput:\n{0}'.format(text))
     print('\nPart 1:', part1)
-    print('\nPart 2:', part2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':
