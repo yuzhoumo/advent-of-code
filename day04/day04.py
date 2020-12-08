@@ -4,11 +4,11 @@ import re
 # Part 1
 def is_valid_weak(passport):
 
-    REQUIRED = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+    required = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
     p = re.compile('[:\n ]')
     tokens = set(p.split(passport))
 
-    for r in REQUIRED:
+    for r in required:
         if r not in tokens:
             return False
 
