@@ -49,7 +49,7 @@ Count the number of _valid_ passports - those that have all required fields. Tre
 
 The line is moving more quickly now, but you overhear airport security talking about how passports with invalid data are getting through. Better add some data validation, quick!
 
-You can continue to ignore the `cid` field, but each other field has <span title="GLORY TO ARSTOTZKA">strict rules</span> about what values are valid for automatic validation:
+You can continue to ignore the `cid` field, but each other field has strict rules about what values are valid for automatic validation:
 
 *   `byr` (Birth Year) - four digits; at least `1920` and at most `2002`.
 *   `iyr` (Issue Year) - four digits; at least `2010` and at most `2020`.
