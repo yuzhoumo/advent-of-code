@@ -44,7 +44,7 @@ Consider again your `shiny gold` bag and the rules from the above example:
 
 So, a single `shiny gold` bag must contain 1 `dark olive` bag (and the 7 bags within it) plus 2 `vibrant plum` bags (and the 11 bags within _each_ of those): `1 + 1*7 + 2 + 2*11` = `_32_` bags!
 
-Of course, the actual rules have a <span title="100%">small</span> chance of going several levels deeper than this example; be sure to count all of the bags, even if the nesting becomes topologically impractical!
+Of course, the actual rules have a small chance of going several levels deeper than this example; be sure to count all of the bags, even if the nesting becomes topologically impractical!
 
 Here's another example:
 
