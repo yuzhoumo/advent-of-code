@@ -3,7 +3,7 @@
 echo
 echo Advent of Code 2020
 
-for n in {1..8}
+for n in {1..9}
 do
     echo
     echo Day $n:
