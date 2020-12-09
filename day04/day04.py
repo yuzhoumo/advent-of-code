@@ -10,17 +10,13 @@ def is_valid_weak(passport):
     """
 
     # Names of required fields
-    required = ('byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid')
+    required = {'byr', 'iyr', 'eyr', 'hgt', 'hcl', 'ecl', 'pid'}
 
     # Split the passport fields
-    p = re.compile('[:\n ]')
-    tokens = set(p.split(passport))
+    pattern = re.compile(r'([a-z]{3}):')
+    fields = set(pattern.findall(passport))
 
-    for r in required:
-        if r not in tokens:
-            return False
-
-    return True
+    return all(req in fields for req in required)
 
 
 # Part 2
@@ -31,68 +27,45 @@ def is_valid_strong(passport):
     content of each field is valid, False otherwise.
     """
 
-    # Used to ensure that each field appears exactly once
-    counts = [0, 0, 0, 0, 0, 0, 0]
+    patterns = { # Regex patterns for each field
+        'byr': re.compile(r'^[1-9][0-9]{3}$'),
+        'iyr': re.compile(r'^[1-9][0-9]{3}$'),
+        'eyr': re.compile(r'^[1-9][0-9]{3}$'),
+        'hgt': re.compile(r'^([1-9][0-9]*)(cm|in)$'),
+        'hcl': re.compile(r'^#[0-9a-f]{6}$'),
+        'ecl': re.compile(r'^amb|blu|brn|gry|grn|hzl|oth$'),
+        'pid': re.compile(r'^[0-9]{9}$')
+    }
 
-    # Split the password fields
-    p = re.compile('[:\n ]')
-    tokens = p.split(passport)
+    checks = { # Correctness checks for each field
+        'byr': lambda x: int(x) < 1920 or int(x) > 2002,
+        'iyr': lambda x: int(x) < 2010 or int(x) > 2020,
+        'eyr': lambda x: int(x) < 2020 or int(x) > 2030,
+        'hgt': lambda x: int(x[:-2]) < 59 or int(x[:-2]) > 76 if x[-2:] == 'in' \
+                         else int(x[:-2]) < 150 or int(x[:-2]) > 193,
+        'hcl': lambda x: False,
+        'ecl': lambda x: False,
+        'pid': lambda x: False
+    }
 
-    for i in range(0, len(tokens), 2):
+    seen = set() # Used to ensure each required field appears exactly once
 
-        key = tokens[i]
-        val = tokens[i+1]
+    # Split the passport fields
+    pattern = re.compile(r'([a-z]{3}):([^\s]+)')
+    pairs = pattern.findall(passport)
 
-        if key == 'byr':
-            counts[0] += 1
-            year = int(val) if re.match('^[1-9][0-9]{3}$', val) else -1
-            if year < 1920 or year > 2002:
-                return False
+    # Check validity of each field
+    for key, val in pairs:
+        if key in patterns:
+            invalid = key in seen \
+               or not patterns[key].match(val) \
+               or checks[key](val)
 
-        elif key == 'iyr':
-            counts[1] += 1
-            year = int(val) if re.match('^[1-9][0-9]{3}$', val) else -1
-            if year < 2010 or year > 2020:
-                return False
+            if invalid: return False
+            seen.add(key)
 
-        elif key == 'eyr':
-            counts[2] += 1
-            year = int(val) if re.match('^[1-9][0-9]{3}$', val) else -1
-            if year < 2020 or year > 2030:
-                return False
-
-        elif key == 'hgt':
-            counts[3] += 1
-            match = re.match('^([1-9][0-9]*)(cm|in)$', val)
-
-            if not match:
-                return False
-
-            height, unit = match.groups()
-            height = int(height)
-
-            if unit == 'cm' and (height < 150 or height > 193):
-                return False
-
-            if unit == 'in' and (height < 59 or height > 76):
-                return False
-
-        elif key == 'hcl':
-            counts[4] += 1
-            if not re.match('^#[0-9abcdef]{6}$', val):
-                return False
-
-        elif key == 'ecl':
-            counts[5] += 1
-            if not re.match('^amb|blu|brn|gry|grn|hzl|oth$', val):
-                return False
-
-        elif key == 'pid':
-            counts[6] += 1
-            if not re.match('^[0-9]{9}$', val):
-                return False
-
-    return all(n == 1 for n in counts)
+    # Check if every required field appears
+    return len(seen) == len(checks)
 
 
 def main():
