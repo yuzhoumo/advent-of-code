@@ -36,19 +36,26 @@ def find_num(nums, preamble):
 
 
 # Part 2
-def longest_subsequence(nums, target):
+def longest_subseq_minmax(nums, target):
     """
     Returns the longest contiguous subsequence of `nums` that sums
     to the `target` value, empty list if none exist.
     """
 
+    # Cumulative sum for O(1) range sum queries
+    prefix_sums = [0]
+    for n in nums:
+        prefix_sums.append(prefix_sums[-1] + n)
+
     for window in range(2, len(nums)):
-        for i in range(0, len(nums) - window + 1):
+        for i in range(len(nums) - window):
 
-            subsequence = nums[i : i + window + 1]
+            # Get sum of the subsequence
+            range_sum = prefix_sums[i + window] - prefix_sums[i]
 
-            if sum(subsequence) == target:
-                return subsequence
+            if range_sum == target:
+                subsequence = nums[i : i + window]
+                return min(subsequence) + max(subsequence)
 
 
 def main():
@@ -62,8 +69,7 @@ def main():
 
     # Solve for parts 1 and 2
     part1 = find_num(nums, 25)
-    res = longest_subsequence(nums, part1)
-    part2 = min(res) + max(res)
+    part2 = longest_subseq_minmax(nums, part1)
 
     print('\nPart 1:', part1)
     print('Part 2:', part2)
