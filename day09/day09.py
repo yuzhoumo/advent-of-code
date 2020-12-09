@@ -26,7 +26,7 @@ def find_num(nums, preamble):
 
     for i in range(preamble, len(nums)):
         start, target = i - preamble, nums[i]
-        subsequence = nums[start:i]
+        subsequence = nums[start : i]
 
         if not twosum(subsequence, target, seen):
             return target
@@ -36,20 +36,19 @@ def find_num(nums, preamble):
 
 
 # Part 2
-def longest_subseqeunce(nums, target):
+def longest_subsequence(nums, target):
     """
     Returns the longest contiguous subsequence of `nums` that sums
     to the `target` value, empty list if none exist.
     """
 
-    sequences = []
     for window in range(2, len(nums)):
-        for i in range(window - 1, len(nums) - window):
-            subsequence = nums[i - window:i]
-            if sum(subsequence) == target:
-                sequences.append(subsequence)
+        for i in range(0, len(nums) - window + 1):
 
-    return max(sequences, key=lambda x: len(x))
+            subsequence = nums[i : i + window + 1]
+
+            if sum(subsequence) == target:
+                return subsequence
 
 
 def main():
@@ -63,7 +62,7 @@ def main():
 
     # Solve for parts 1 and 2
     part1 = find_num(nums, 25)
-    res = longest_subseqeunce(nums, part1)
+    res = longest_subsequence(nums, part1)
     part2 = min(res) + max(res)
 
     print('\nPart 1:', part1)
