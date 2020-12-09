@@ -14,7 +14,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 * Day 6: [Custom Customs](/day06)
 * Day 7: [Handy Haversacks](/day07)
 * Day 8: [Handheld Halting](/day08)
-* Day 9: 
+* Day 9: [Encoding Error](/day09)
 * Day 10: 
 * Day 11: 
 * Day 12: 
