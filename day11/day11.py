@@ -2,8 +2,9 @@ import sys
 
 
 # Shared bewteen part 1 and 2
-ADJ = ((-1, -1), (-1,  0), (-1, 1), (0, -1),
-       ( 0,  1), ( 1, -1), ( 1, 0), (1,  1))
+ADJ = ((-1, -1), (-1, 00), (-1, +1),
+       (00, -1),           (00, +1),
+       (+1, -1), (+1, 00), (+1, +1))
 
 
 def get_next_state(seats, rules):
@@ -90,13 +91,17 @@ def main():
         seats = [list(row) for row in text.splitlines()]
 
     # Rules for state changes
-    rules1 = { 'L': lambda seats, i, j: '#' if check_adj(seats, i, j) == 0 else 'L',
-               '#': lambda seats, i, j: 'L' if check_adj(seats, i, j) >= 4 else '#',
-               '.': lambda seats, i, j: '.' }
-    
-    rules2 = { 'L': lambda seats, i, j: '#' if check_visible(seats, i, j) == 0 else 'L',
-               '#': lambda seats, i, j: 'L' if check_visible(seats, i, j) >= 5 else '#',
-               '.': lambda seats, i, j: '.' }
+    rules1 = {
+        'L': lambda seats, i, j: '#' if check_adj(seats, i, j) == 0 else 'L',
+        '#': lambda seats, i, j: 'L' if check_adj(seats, i, j) >= 4 else '#',
+        '.': lambda seats, i, j: '.'
+    }
+
+    rules2 = {
+        'L': lambda seats, i, j: '#' if check_visible(seats, i, j) == 0 else 'L',
+        '#': lambda seats, i, j: 'L' if check_visible(seats, i, j) >= 5 else '#',
+        '.': lambda seats, i, j: '.'
+    }
 
     # Solve for parts 1 and 2
     print('\nPart 1:', occupied_seats(seats, rules1))
