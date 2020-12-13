@@ -1,10 +1,11 @@
 import sys
 
 
+# Part 1
 def twosum(nums, target, seen):
     """
-    Returns True if there exists two numbers in `nums` such that
-    the numbers sum to `target`, False otherwise.
+    Returns True if there exists two numbers in `nums` such that the numbers sum
+    to `target`, False otherwise.
     """
 
     for n in nums:
@@ -14,12 +15,10 @@ def twosum(nums, target, seen):
     return False
 
 
-# Part 1
 def find_num(nums, preamble):
     """
-    Returns the first number in `nums` such that no two numbers in
-    the preceding `preamble` number of elements sum to it, None if
-    no such number exists.
+    Returns the first number in `nums` such that no two numbers in the preceding
+    `preamble` number of elements sum to it, None if no such number exists.
     """
 
     seen = set(nums[:preamble])
@@ -36,13 +35,13 @@ def find_num(nums, preamble):
 
 
 # Part 2
-def longest_subseq_minmax(nums, target):
+def longest_subseq_minmax_sum(nums, target):
     """
-    Returns the longest contiguous subsequence of `nums` that sums
-    to the `target` value, empty list if none exist.
+    Returns the longest contiguous subsequence of `nums` that sums to the
+    `target` value, empty list if none exist.
     """
 
-    # Cumulative sum for O(1) range sum queries
+    # Create cumulative sums to enable O(1) range sum queries
     prefix_sums = [0]
     for n in nums:
         prefix_sums.append(prefix_sums[-1] + n)
@@ -67,11 +66,12 @@ def main():
         text = f.read().strip()
         nums = [int(n) for n in text.splitlines()]
 
-    # Solve for parts 1 and 2
+    # Solve part 1
     part1 = find_num(nums, 25)
-    part2 = longest_subseq_minmax(nums, part1)
-
     print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = longest_subseq_minmax_sum(nums, part1)
     print('Part 2:', part2)
 
 

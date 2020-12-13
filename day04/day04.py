@@ -4,9 +4,8 @@ import re
 # Part 1
 def is_valid_weak(passport):
     """
-    Perform a weak check given a string representing the contents
-    of a passport. Returns true if all required fields are present,
-    False otherwise.
+    Perform a weak check given a string representing the contents of a passport.
+    Returns true if all required fields are present, False otherwise.
     """
 
     # Names of required fields
@@ -22,9 +21,9 @@ def is_valid_weak(passport):
 # Part 2
 def is_valid_strong(passport):
     """
-    Perform a strong check given a string representing the contents
-    of a passport. Returns true if all required fields are present and
-    content of each field is valid, False otherwise.
+    Perform a strong check given a string representing the contents of a
+    passport. Returns true if all required fields are present and content of
+    each field is valid, False otherwise.
     """
 
     patterns = { # Regex patterns for each field
@@ -41,7 +40,7 @@ def is_valid_strong(passport):
         'byr': lambda x: int(x) < 1920 or int(x) > 2002,
         'iyr': lambda x: int(x) < 2010 or int(x) > 2020,
         'eyr': lambda x: int(x) < 2020 or int(x) > 2030,
-        'hgt': lambda x: int(x[:-2]) < 59 or int(x[:-2]) > 76 if x[-2:] == 'in' \
+        'hgt': lambda x: int(x[:-2]) < 59 or int(x[:-2]) > 76 if x[-2:] == 'in'\
                          else int(x[:-2]) < 150 or int(x[:-2]) > 193,
         'hcl': lambda x: False,
         'ecl': lambda x: False,
@@ -77,11 +76,12 @@ def main():
         text = f.read().strip()
         passports = text.split('\n\n')
 
-    # Solve parts 1 and 2
+    # Solve part 1
     part1 = sum(1 for p in passports if is_valid_weak(p))
-    part2 = sum(1 for p in passports if is_valid_strong(p))
-
     print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = sum(1 for p in passports if is_valid_strong(p))
     print('Part 2:', part2)
 
 
