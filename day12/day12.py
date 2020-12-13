@@ -1,5 +1,4 @@
 import sys
-from collections import namedtuple
 
 
 # Part 1
