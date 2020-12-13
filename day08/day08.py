@@ -7,9 +7,9 @@ def detect_loop(instructions):
     
         [('acc', 5), ('nop', 0), ('jmp', -2), ...]
 
-    Return True, `accumulator` right before the first time
-    the same instruction is run more than once. Otherwise, return
-    False, `accumulator` if no loop is detected.
+    Return True, `accumulator` right before the first time the same instruction
+    is run more than once. Otherwise, return False, `accumulator` if no loop
+    is detected.
     """
 
     ptr, accumulator, seen = 0, 0, set()
@@ -35,9 +35,8 @@ def detect_loop(instructions):
 # Part 2
 def fix_program(instructions):
     """
-    Swap each nop/jmp instruction and check if the new program
-    loops. Returns the resulting accumulator if the loop is
-    fixed, None otherwise.
+    Swap each nop/jmp instruction and check if the new program loops. Returns
+    the resulting accumulator if the loop is fixed, None otherwise.
     """
 
     for ptr, pair in enumerate(instructions):
@@ -47,12 +46,12 @@ def fix_program(instructions):
         if inst in ('nop', 'jmp'):
 
             # Swap jmp/nop instructions
-            replace = 'nop' if inst == 'jmp' else 'jmp'
-            instructions[ptr] = [replace, n]
+            replacement = 'nop' if inst == 'jmp' else 'jmp'
+            instructions[ptr] = [replacement, n]
 
             # Return accumulator if loop is fixed
-            res, acc = detect_loop(instructions)
-            if not res: return acc
+            is_loop, accumulator = detect_loop(instructions)
+            if not is_loop: return accumulator
 
             # Reset instruction back to old value
             instructions[ptr] = [inst, n]
@@ -65,13 +64,14 @@ def main():
 
     with open(input_file, 'r') as f:
         lines = f.read().strip().splitlines()
-        insts = [[i, int(n)] for i, n in [i.split() for i in lines]]
+        instructions = [[i, int(n)] for i, n in [i.split() for i in lines]]
 
-    # Solve for parts 1 and 2
-    part1 = detect_loop(insts)[1]
-    part2 = fix_program(insts)
-
+    # Solve part 1
+    part1 = detect_loop(instructions)[1]
     print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = fix_program(instructions)
     print('Part 2:', part2)
 
 

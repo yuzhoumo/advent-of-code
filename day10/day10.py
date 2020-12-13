@@ -27,9 +27,9 @@ def ones_threes_product(sorted_nums):
 # Part 2
 def num_arrangements(sorted_nums):
     """
-    Count the number of subsets of a sorted list of integers such that
-    the numbers span from 0 to max(sorted_nums) + 3 with differences
-    of <= 3 between each number.
+    Count the number of subsets of a sorted list of integers such that the
+    numbers span from 0 to max(sorted_nums) + 3 with differences of <= 3
+    between each number.
     """
 
     counts = defaultdict(int)
@@ -52,9 +52,13 @@ def main():
         nums = [int(n) for n in text.splitlines()]
         nums.sort()
 
-    # Solve for parts 1 and 2
-    print('\nPart 1:', ones_threes_product(nums))
-    print('Part 2:', num_arrangements(nums))
+    # Solve part 1
+    part1 = ones_threes_product(nums)
+    print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = num_arrangements(nums)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':

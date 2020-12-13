@@ -26,8 +26,8 @@ def get_next_state(seats, rules):
 
 def occupied_seats(seats, rules):
     """
-    Counts the number of occupied seats that will eventually be reached
-    when the state of the system reaches equilibrium.
+    Counts the number of occupied seats that will eventually be reached when
+    the state of the system reaches equilibrium.
     """
 
     state, changes = get_next_state(seats, rules)
@@ -40,8 +40,8 @@ def occupied_seats(seats, rules):
 # Part 1
 def check_adj(seats, r, c):
     """
-    Takes a 2D array of characters and returns the number of occupied
-    seats (represented by '#') that are adjacent to a given seat.
+    Takes a 2D array of characters and returns the number of occupied seats
+    (represented by '#') that are adjacent to a given seat.
     """
 
     occupied = 0
@@ -57,12 +57,12 @@ def check_adj(seats, r, c):
 
 
 # Part 2
-def check_visible(seats, r, c):
+def check_vis(seats, r, c):
     """
-    Takes a 2D array of characters and returns the number of occupied
-    seats (represented by '#') that are visible to a given seat (ie.
-    count the first seat that is encountered after moving in a straight
-    line in any of the adjacent directions).
+    Takes a 2D array of characters and returns the number of occupied seats
+    (represented by '#') that are visible to a given seat (ie. count the first
+    seat that is encountered after moving in a straight line in any of the
+    adjacent directions).
     """
 
     occupied = 0
@@ -98,8 +98,8 @@ def main():
     }
 
     rules2 = {
-        'L': lambda seats, i, j: '#' if check_visible(seats, i, j) == 0 else 'L',
-        '#': lambda seats, i, j: 'L' if check_visible(seats, i, j) >= 5 else '#',
+        'L': lambda seats, i, j: '#' if check_vis(seats, i, j) == 0 else 'L',
+        '#': lambda seats, i, j: 'L' if check_vis(seats, i, j) >= 5 else '#',
         '.': lambda seats, i, j: '.'
     }
 

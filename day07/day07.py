@@ -6,10 +6,10 @@ from functools import lru_cache
 RULES = {}  # Global variable for storing bag rules, set in main
 
 
-def parse_input(lines):
+def parse_input(descriptions):
     """
-    Parses the input lines into a usable data structure. `rules` is a dict
-    of the following structure:
+    Parses the input descriptions into a usable data structure. `rules` is a
+    dictionary of the following structure:
 
     rules = { 
 
@@ -28,32 +28,32 @@ def parse_input(lines):
 
     rules = {}
 
-    for line in lines:
-        root, children = line.split(' bags contain ')
+    for line in descriptions:
+        bag, children = line.split(' bags contain ')
         children = re.compile(r'([0-9]+) ([a-z]+ [a-z]+)').findall(children)
-        rules[root] = { color: int(n) for n, color in children }
+        rules[bag] = { color: int(n) for n, color in children }
 
     return rules
 
 
 # Part 1
 @lru_cache(maxsize=128)
-def search_bags(root, color):
+def search_bags(start, target):
     """
-    Returns True if a bag of color `root` will eventually contain a child bag
-    of color `color`, False otherwise.
+    Returns True if a bag of color `start` will eventually contain a child bag
+    of color `target`, False otherwise.
     """
 
-    children = RULES[root]
+    children = RULES[start]
 
     if children is None:
         return False
 
-    if color in children:
+    if target in children:
         return True
 
-    for c in children:
-        if search_bags(c, color):
+    for color in children:
+        if search_bags(color, target):
             return True
 
     return False
@@ -82,24 +82,26 @@ def count_bags(root):
 
 
 def main():
-
-    global RULES
-
     assert len(sys.argv) > 1, 'Missing argument: path to input file'
     assert len(sys.argv) < 3, 'Too many arguments'
     input_file = sys.argv[1]
 
+    global RULES
+
     with open(input_file, 'r') as f:
         text = f.read().strip()
-        lines = text.splitlines()
-        RULES = parse_input(lines)
-        colors = RULES.keys()
+        descriptions = text.splitlines()
+    
+    # Set global rules for bag colors
+    RULES = parse_input(descriptions)
+    colors = RULES.keys()
 
-    # Solve for parts 1 and 2
+    # Solve part 1
     part1 = sum(1 for c in colors if search_bags(c, 'shiny gold'))
-    part2 = count_bags('shiny gold')
-
     print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = count_bags('shiny gold')
     print('Part 2:', part2)
 
 
