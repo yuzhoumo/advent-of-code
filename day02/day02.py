@@ -33,7 +33,7 @@ def is_valid_index(rule):
     pattern = re.compile('[-: ]+')
     i, j, character, password = pattern.split(rule)
     i, j = int(i) - 1, int(j) - 1
-    return (password[i] == character) != (password[j] == chaaracter)
+    return (password[i] == character) != (password[j] == character)
 
 
 def main():
