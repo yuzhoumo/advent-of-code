@@ -41,7 +41,7 @@ def manhattan_dist1(instructions, start_bearing):
 
 
 # Part 2
-def manhattan_dist2(instructions, start_coords):
+def manhattan_dist2(instructions, start_waypoint):
     """
     Takes a list of instructions of the same format as `manhattan_dist1` but
     with different interpretation. Each move alters the position of a waypoint
@@ -52,7 +52,7 @@ def manhattan_dist2(instructions, start_coords):
 
     # Map directions to their indices
     directions = { 'N': 0, 'E': 1, 'S': 2, 'W': 3 }
-    ship, moves = [0, 0], start_coords
+    ship, moves = [0, 0], start_waypoint
 
     for d, n in instructions:
 
@@ -61,7 +61,7 @@ def manhattan_dist2(instructions, start_coords):
             n = (n // 90) % 4
             moves = moves[n:] + moves[:n]
         elif d == 'R':
-            # Turn waypoint right (clockwise)
+            # Rotate waypoint right (clockwise)
             n = (n // 90) % 4
             moves = moves[-n:] + moves[:-n]
         elif d == 'F':
