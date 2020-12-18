@@ -10,7 +10,7 @@ def is_valid_count(rule):
 
     Example: ensure password contains between 1-13 'r' chars
         >>> is_valid_count('1-13 r: gqdrspndrpsrjfjx')
-        >>> True
+        True
     """
 
     pattern = re.compile('[-: ]+')
@@ -27,7 +27,7 @@ def is_valid_index(rule):
 
     Example: ensure char is 'r' at either index 1 or 13 exclusive
         >>> is_valid_index('1-13 r: gqdrspndrpsrjfjx')
-        >>> False
+        False
     """
 
     pattern = re.compile('[-: ]+')

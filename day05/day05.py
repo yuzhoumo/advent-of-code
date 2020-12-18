@@ -9,7 +9,7 @@ def get_id(code):
 
     Example: 'BFFFBBFRRR' -> 0b1000110111
         >>> get_id('BFFFBBFRRR')
-        >>> 567
+        567
     """
 
     n, tot = 1, 0
@@ -30,7 +30,7 @@ def get_missing(seat_ids):
 
     Example:
         >>> get_missing([1, 4, 3, 5])
-        >>> 2
+        2
     """
 
     seat_ids = sorted(seat_ids)
