@@ -18,7 +18,7 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 * Day 10: [Adapter Array](/day10)
 * Day 11: [Seating System](/day11)
 * Day 12: [Rain Risk](/day12)
-* Day 13: 
+* Day 13: [Shuttle Search](/day13)
 * Day 14: 
 * Day 15: 
 * Day 16: 
