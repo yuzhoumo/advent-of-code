@@ -2,7 +2,10 @@
 
 https://adventofcode.com/2020/
 
-Advent of Code is an Advent calendar of small programming puzzles for a variety of skill sets and skill levels that can be solved in any programming language you like. People use them as a speed contest, interview prep, company training, university coursework, practice problems, or to challenge each other.
+Advent of Code is an Advent calendar of small programming puzzles for a variety
+of skill sets and skill levels that can be solved in any programming language
+you like. People use them as a speed contest, interview prep, company training,
+university coursework, practice problems, or to challenge each other.
 
 ## My Solutions:
 
@@ -19,11 +22,11 @@ Advent of Code is an Advent calendar of small programming puzzles for a variety 
 * Day 11: [Seating System](/day11)
 * Day 12: [Rain Risk](/day12)
 * Day 13: [Shuttle Search](/day13)
-* Day 14: 
-* Day 15: 
-* Day 16: 
-* Day 17: 
-* Day 18: 
+* Day 14: [Docking Data](/day14)
+* Day 15: [Rambunctious Recitation](/day15)
+* Day 16: [Ticket Translation](/day16)
+* Day 17: [Conway Cubes](/day17)
+* Day 18: [Operation Order](/day18)
 * Day 19: 
 * Day 20: 
 * Day 21: 
