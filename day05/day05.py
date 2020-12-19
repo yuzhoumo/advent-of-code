@@ -48,8 +48,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        seats = text.splitlines()
+        seats = f.read().splitlines()
 
     # Get list of seat ids
     seat_ids = [get_id(s) for s in seats]

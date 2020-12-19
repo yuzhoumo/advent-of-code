@@ -45,8 +45,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        answers = text.split('\n\n')
+        answers = f.read().split('\n\n')
 
     # Solve part 1
     part1 = sum(count_yes(a) for a in answers)

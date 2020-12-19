@@ -87,8 +87,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        seats = [list(row) for row in text.splitlines()]
+        seats = [list(row) for row in f.read().splitlines()]
 
     # Rules for state changes
     rules1 = {
@@ -103,9 +102,13 @@ def main():
         '.': lambda seats, i, j: '.'
     }
 
-    # Solve for parts 1 and 2
-    print('\nPart 1:', occupied_seats(seats, rules1))
-    print('Part 2:', occupied_seats(seats, rules2))
+    # Solve part 1
+    part1 = occupied_seats(seats, rules1)
+    print('\nPart 1:', part1)
+
+    # Solve part 2
+    part2 = occupied_seats(seats, rules2)
+    print('Part 2:', part2)
 
 
 if __name__ == '__main__':

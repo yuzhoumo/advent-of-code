@@ -86,12 +86,11 @@ def main():
     assert len(sys.argv) < 3, 'Too many arguments'
     input_file = sys.argv[1]
 
-    global RULES
+    global RULES  # Use global variable for rules to support LRU cache
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        descriptions = text.splitlines()
-    
+        descriptions = f.read().splitlines()
+
     # Set global rules for bag colors
     RULES = parse_input(descriptions)
     colors = RULES.keys()

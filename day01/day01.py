@@ -35,8 +35,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        nums = [int(n) for n in text.splitlines()]
+        nums = [int(n) for n in f.read().splitlines()]
 
     # Solve part 1
     part1 = twosum_mul(nums, 2020)

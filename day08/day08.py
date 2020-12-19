@@ -63,8 +63,10 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        lines = f.read().strip().splitlines()
-        instructions = [[i, int(n)] for i, n in [i.split() for i in lines]]
+        lines = f.read().splitlines()
+
+    # Split instruction lines by word
+    instructions = [[i, int(n)] for i, n in [i.split() for i in lines]]
 
     # Solve part 1
     part1 = detect_loop(instructions)[1]
