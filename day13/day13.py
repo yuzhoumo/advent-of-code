@@ -35,13 +35,14 @@ def crt(n, r):
         x = 3 mod 7
         x = 31 is the smallest number s.t. 31 % 5 = 1 and 31 % 7 = 3
     """
+
     def egcd(a, b):  # Extended Euclidian algorithm
         if b == 0: return (1, 0)
         c, d = egcd(b, a % b)
         return d, c - a // b * d
 
     def inverse_mod(r, n):  # Inverse modulo
-        (a, x) = egcd(r, n)
+        a = egcd(r, n)[0]
         if a < 0: a = (a % n + n) % n
         return a
 

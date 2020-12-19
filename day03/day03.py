@@ -41,8 +41,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        layout = text.splitlines()
+        layout = f.read().splitlines()
 
     # Solve part 1
     part1 = count_trees(layout, 1, 3)

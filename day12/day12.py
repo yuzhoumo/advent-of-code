@@ -83,8 +83,7 @@ def main():
     input_file = sys.argv[1]
 
     with open(input_file, 'r') as f:
-        text = f.read().strip()
-        instructions = [(row[:1], int(row[1:])) for row in text.splitlines()]
+        instructions = [(i[:1], int(i[1:])) for i in f.read().splitlines()]
 
     # Solve part 1
     initial_bearing = 1  # Ship starts facing east
