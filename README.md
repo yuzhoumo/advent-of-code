@@ -27,10 +27,10 @@ university coursework, practice problems, or to challenge each other.
 * Day 16: [Ticket Translation](/day16)
 * Day 17: [Conway Cubes](/day17)
 * Day 18: [Operation Order](/day18)
-* Day 19: 
-* Day 20: 
-* Day 21: 
-* Day 22: 
-* Day 23: 
-* Day 24: 
-* Day 25: 
+* Day 19: [Monster Messages](/day19)
+* Day 20: [Jurassic Jigsaw](/day20)
+* Day 21: [Allergen Assessment](/day21)
+* Day 22: [Crab Combat](/day22)
+* Day 23: [Crab Cups](/day23)
+* Day 24: [Lobby Layout](/day24)
+* Day 25: [Combo Breaker](/day25)
