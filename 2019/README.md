@@ -10,13 +10,13 @@ Use `sh run_solutions.sh` to run them all solutions at once, or run them
 individually using the command found in the readme for that solution. All unit
 tests can also be run at once using `sh run_tests.sh` or run individually.
 
-* [Day 1](day01): The Tyranny of the Rocket Equation
-* [Day 2](day02): 1202 Program Alarm
-* [Day 3](day03): Crossed Wires
-* [Day 4](day04): Secure Container
-* [Day 5](day05): Sunny with a Chance of Asteroids
-* [Day 6](day06): Universal Orbit Map
-* [Day 7](day07): Amplification Circuit
-* [Day 8](day08): Space Image Format
-* [Day 9](day09): Sensor Boost
-* [Extras](extras): Miscellaneous Files
+* Day 1: [The Tyranny of the Rocket Equation](day01)
+* Day 2: [1202 Program Alarm](day02)
+* Day 3: [Crossed Wires](day03)
+* Day 4: [Secure Container](day04)
+* Day 5: [Sunny with a Chance of Asteroids](day05)
+* Day 6: [Universal Orbit Map](day06)
+* Day 7: [Amplification Circuit](day07)
+* Day 8: [Space Image Format](day08)
+* Day 9: [Sensor Boost](day09)
+* Extras: [Miscellaneous Files](extras)
