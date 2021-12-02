@@ -2,15 +2,7 @@ import aoc
 import sys
 
 RAW = aoc.day(2)
-
-def parse(raw: str) -> list[tuple[str, int]]:
-    data = []
-    for line in raw.splitlines():
-        d, n = line.split()
-        data.append((d, int(n)))
-    return data
-
-DATA = parse(RAW)
+DATA = [(d, int(a)) for d, a in re.findall("(\w+) (\d+)", RAW)]
 
 def part_one() -> int:
     """
