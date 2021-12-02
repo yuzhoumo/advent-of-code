@@ -1,4 +1,5 @@
 import aoc
+import sys
 
 RAW = aoc.day(1)
 DATA = [int(n) for n in RAW.splitlines()]
@@ -24,5 +25,10 @@ def part_two() -> int:
     return num_increasing(sums)
 
 
-aoc.submit(1, part_one)
-aoc.submit(1, part_two)
+if sys.argv[1] == "--no-submit":
+    print("Part 1:", part_one())
+    print("Part 2:", part_two())
+else:
+    aoc.submit(1, part_one)
+    aoc.submit(1, part_two)
+    

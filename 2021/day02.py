@@ -1,7 +1,7 @@
 import aoc
+import sys
 
 RAW = aoc.day(2)
-
 
 def parse(raw: str) -> list[tuple[str, int]]:
     data = []
@@ -10,9 +10,7 @@ def parse(raw: str) -> list[tuple[str, int]]:
         data.append((d, int(n)))
     return data
 
-
 DATA = parse(RAW)
-
 
 def part_one() -> int:
     """
@@ -53,5 +51,9 @@ def part_two() -> int:
     return x * y
 
 
-aoc.submit(2, part_one)
-aoc.submit(2, part_two)
+if sys.argv[1] == "--no-submit":
+    print("Part 1:", part_one())
+    print("Part 2:", part_two())
+else:
+    aoc.submit(2, part_one)
+    aoc.submit(2, part_two)

@@ -7,7 +7,7 @@ skill sets and skill levels that can be solved in any programming language you l
 
 ## My Solutions
 
-Use `sh run.sh` to run all solutions at once, or run them individually using the
+Use `bash run.sh` to run all solutions at once, or run them individually using the
 command in the readme for that solution.
 
 - Day 1: [Report Repair](day01)

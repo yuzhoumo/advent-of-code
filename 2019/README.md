@@ -7,9 +7,9 @@ skill sets and skill levels that can be solved in any programming language you l
 
 ## My Solutions
 
-Use `sh run.sh` to run all solutions at once, or run them individually using the
+Use `bash run.sh` to run all solutions at once, or run them individually using the
 command in the readme for that solution. All unit tests can be run either all at
-once using `sh run_tests.sh` or individually.
+once using `bash run_tests.sh` or individually.
 
 - Day 1: [The Tyranny of the Rocket Equation](day01)
 - Day 2: [1202 Program Alarm](day02)
