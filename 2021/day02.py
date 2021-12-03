@@ -43,7 +43,7 @@ def part_two() -> int:
     return x * y
 
 
-if sys.argv[1] == "--no-submit":
+if len(sys.argv) > 1 and sys.argv[1] == "--no-submit":
     print("Part 1:", part_one())
     print("Part 2:", part_two())
 else:
