@@ -11,6 +11,7 @@ import (
 	"github.com/yuzhoumo/advent-of-code/aoc22/day03"
 	"github.com/yuzhoumo/advent-of-code/aoc22/day04"
 	"github.com/yuzhoumo/advent-of-code/aoc22/day05"
+	"github.com/yuzhoumo/advent-of-code/aoc22/day06"
 )
 
 var sols = []utils.Solution{
@@ -19,6 +20,7 @@ var sols = []utils.Solution{
 	&day03.Day03{},
 	&day04.Day04{},
 	&day05.Day05{},
+	&day06.Day06{},
 }
 
 func main() {
