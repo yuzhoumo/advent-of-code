@@ -7,20 +7,7 @@ import (
 	"slices"
 )
 
-type move struct {
-	cnt, src, dst int
-}
-
 type stack []rune
-
-func (s stack) Push(r rune) stack {
-	return append(s, r)
-}
-
-func (s stack) Pop() (stack, rune) {
-	end := len(s) - 1
-	return s[:end], s[end]
-}
 
 func (s stack) PushN(runes []rune) stack {
 	return append(s, runes...)
@@ -79,6 +66,10 @@ func parseStacks(diagram string) []stack {
 		}
 	}
 	return crates
+}
+
+type move struct {
+	cnt, src, dst int
 }
 
 func parseMoves(procedure string) []move {
