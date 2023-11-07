@@ -1,21 +1,20 @@
 package dayXX
 
 type DayXX struct {
-
 }
 
 func (d *DayXX) Init(input string) {
-    return
+	return
 }
 
 func (d *DayXX) Title() string {
-    return ""
+	return ""
 }
 
 func (d *DayXX) PartOne() string {
-    return ""
+	return ""
 }
 
 func (d *DayXX) PartTwo() string {
-    return ""
+	return ""
 }
