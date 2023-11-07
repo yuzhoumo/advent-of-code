@@ -4,6 +4,7 @@ import (
 	"bufio"
 	"fmt"
 	"strings"
+	"slices"
 )
 
 type move struct {
@@ -16,16 +17,13 @@ func (s stack) Push(r rune) stack {
 	return append(s, r)
 }
 
-func (s stack) PushN(runes []rune) stack {
-	for _, r := range runes {
-		s = append(s, r)
-	}
-	return s
-}
-
 func (s stack) Pop() (stack, rune) {
 	end := len(s) - 1
 	return s[:end], s[end]
+}
+
+func (s stack) PushN(runes []rune) stack {
+	return append(s, runes...)
 }
 
 func (s stack) PopN(n int) (stack, []rune) {
@@ -62,15 +60,18 @@ func parseRows(diagram string) [][]rune {
 		for i := 1; i < len(line); i += 4 {
 			row = append(row, rune(line[i]))
 		}
-		rows = append(rows, row)
+		if len(row) != 0 {
+			rows = append(rows, row)
+		}
 	}
 	return rows
 }
 
 func parseStacks(diagram string) []stack {
 	rows := parseRows(diagram)
-	crates := make([]stack, len(rows[0]))
-	for i := len(rows[0]) - 1; i > -1; i -= 1 {
+	numCols := len(rows[0])
+	crates := make([]stack, numCols)
+	for i := len(rows) - 1; i > -1; i -= 1 {
 		for j, v := range rows[i] {
 			if v != ' ' {
 				crates[j] = append(crates[j], v)
@@ -100,7 +101,7 @@ type Day05 struct {
 }
 
 func (d *Day05) Init(input string) {
-	d.stacks = parseStacks(input[:strings.Index(input, "1")-1])
+	d.stacks = parseStacks(input[:strings.Index(input, "1")])
 	d.moves = parseMoves(input[strings.Index(input, "move"):])
 }
 
@@ -111,11 +112,10 @@ func (d *Day05) Title() string {
 func (d *Day05) PartOne() string {
 	crates := copyStacks(d.stacks)
 	for _, m := range d.moves {
-		for i := 0; i < m.cnt; i += 1 {
-			var val rune
-			crates[m.src], val = crates[m.src].Pop()
-			crates[m.dst] = crates[m.dst].Push(val)
-		}
+		var vals []rune
+		crates[m.src], vals = crates[m.src].PopN(m.cnt)
+		slices.Reverse(vals)
+		crates[m.dst] = crates[m.dst].PushN(vals)
 	}
 	return getTop(crates)
 }
