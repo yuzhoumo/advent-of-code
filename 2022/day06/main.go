@@ -2,24 +2,23 @@ package day06
 
 import (
 	"errors"
+	"math/bits"
 	"strconv"
 	"strings"
 )
 
 func findUnique(data []rune, size int) (int, error) {
-	for i := 0; i < len(data); i += 1 {
-		found, seen := true, map[rune]bool{}
-		for j := i; j < i + size; j += 1 {
-			curr := data[j]
-			if seen[curr] {
-				found = false
-				break
-			}
-			seen[curr] = true
-		}
+	var accum uint = 0
+	masks := make([]uint, len(data))
 
-		if found {
-			return i + size, nil
+	for i, c := range data {
+		masks[i] = uint(1 << (c - 'a'))
+		accum ^= masks[i]
+		if i >= size {
+			accum ^= uint(masks[i - size])
+			if bits.OnesCount(accum) == size {
+				return i + 1, nil
+			}
 		}
 	}
 
