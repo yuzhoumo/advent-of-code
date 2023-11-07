@@ -4,11 +4,13 @@ import (
 	"fmt"
 	"os"
 
+	"github.com/yuzhoumo/advent-of-code/aoc22/utils"
+
 	"github.com/yuzhoumo/advent-of-code/aoc22/day01"
 	"github.com/yuzhoumo/advent-of-code/aoc22/day02"
 	"github.com/yuzhoumo/advent-of-code/aoc22/day03"
 	"github.com/yuzhoumo/advent-of-code/aoc22/day04"
-	"github.com/yuzhoumo/advent-of-code/aoc22/utils"
+	"github.com/yuzhoumo/advent-of-code/aoc22/day05"
 )
 
 var sols = []utils.Solution{
@@ -16,6 +18,7 @@ var sols = []utils.Solution{
 	&day02.Day02{},
 	&day03.Day03{},
 	&day04.Day04{},
+	&day05.Day05{},
 }
 
 func main() {
