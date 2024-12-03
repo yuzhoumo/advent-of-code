@@ -11,19 +11,14 @@ def multiply(s):
 def part1(data):
     pattern = re.compile(r"mul\(\d+,\d+\)")
     matches = re.findall(pattern, data)
-
-    res = 0
-    for m in matches:
-        res += multiply(m)
-
-    return res
+    return sum(multiply(m) for m in matches)
 
 
 def part2(data):
     pattern = re.compile(r"(mul\(\d+,\d+\))|(do\(\))|(don't\(\))")
     matches = re.findall(pattern, data)
-    res = 0
-    should_mul = True
+
+    res, should_mul = 0, True
     for m in matches:
         mul, do, dont = m
 
