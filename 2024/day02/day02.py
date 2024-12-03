@@ -8,12 +8,11 @@ def check_row(row):
     if N == 1:
         return True
 
-    order, r = range(1, N), False
     if row[0] > row[1]:
-        order, r = reversed(order), True
+        row = row[::-1]
 
-    for i in order:
-        diff = row[i] - row[i-1] if r else row[i-1] - row[i]
+    for i in range(1, N):
+        diff = row[i] - row[i-1]
         if (diff <= 0) or (diff > 3):
             return False
 
