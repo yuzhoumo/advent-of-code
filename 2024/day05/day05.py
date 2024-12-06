@@ -19,7 +19,6 @@ def part1(rules, stacks):
 
 
 def part2(rules, stacks):
-    # custom comparison function
     compare = cmp_to_key(lambda a, b: -1 if b in rules[a] else 1)
     return sum(sorted(s, key=compare)[len(s)//2] for s in stacks if not is_valid(rules, s))
 
@@ -28,11 +27,11 @@ def main(filename):
     with open(filename, "r") as f:
         data = f.read().strip()
 
-        rules, stacks = defaultdict(set), []
+        rules, stacks = defaultdict(list), []
         for line in data.splitlines():
             if "|" in line:
                 a, b = line.strip().split("|")
-                rules[int(a)].add(int(b))
+                rules[int(a)].append(int(b))
             if "," in line:
                 stacks.append([int(i) for i in line.strip().split(",")])
 
