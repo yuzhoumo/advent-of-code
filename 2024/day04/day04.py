@@ -7,7 +7,7 @@ def search(grid, r, c, word):
 
     # horizontal
     if c + n <= len(grid[0]):
-        count += ''.join(grid[r][c:c+4]) == word
+        count += ''.join(grid[r][c:c+n]) == word
 
     # vertical
     if r + n <= len(grid):
@@ -41,7 +41,6 @@ def part1(grid):
             elif let == 'S':
                 count += search(grid, r, c, "SAMX")
     return count
-
 
 
 def part2(grid):
