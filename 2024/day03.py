@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 import re
 
 
@@ -34,15 +33,14 @@ def part2(data):
     return res
 
 
-def main(filename):
-    with open(filename, "r") as f:
-        data = f.read().strip()
+def main(text, part=None):
+    data = text.strip()
 
+    if part is None or part == 1:
         print(f"part 1: {part1(data)}")
+    if part is None or part == 2:
         print(f"part 2: {part2(data)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 3)

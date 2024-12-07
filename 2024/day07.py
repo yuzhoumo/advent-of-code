@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 
 
 def calibrate(equations, ops):
@@ -29,19 +28,18 @@ def part2(equations):
     return calibrate(equations, ops)
 
 
-def main(filename):
-    with open(filename, "r") as f:
-        data = f.read().strip()
-        equations = []
-        for line in data.splitlines():
-            key, rest = line.split(":")
-            equations.append([int(key), [int(n) for n in rest.split()]])
+def main(text, part=None):
+    data = text.strip()
+    equations = []
+    for line in data.splitlines():
+        key, rest = line.split(":")
+        equations.append([int(key), [int(n) for n in rest.split()]])
 
+    if part is None or part == 1:
         print(f"part 1: {part1(equations)}")
+    if part is None or part == 2:
         print(f"part 2: {part2(equations)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 7)

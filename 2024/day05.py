@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 from functools import cmp_to_key
 from collections import defaultdict
 
@@ -23,24 +22,22 @@ def part2(rules, stacks):
     return sum(sorted(s, key=compare)[len(s)//2] for s in stacks if not is_valid(rules, s))
 
 
-def main(filename):
-    with open(filename, "r") as f:
-        data = f.read().strip()
+def main(text, part=None):
+    data = text.strip()
+    rules, stacks = defaultdict(list), []
+    for line in data.splitlines():
+        if "|" in line:
+            a, b = line.strip().split("|")
+            rules[int(a)].append(int(b))
+        if "," in line:
+            stacks.append([int(i) for i in line.strip().split(",")])
 
-        rules, stacks = defaultdict(list), []
-        for line in data.splitlines():
-            if "|" in line:
-                a, b = line.strip().split("|")
-                rules[int(a)].append(int(b))
-            if "," in line:
-                stacks.append([int(i) for i in line.strip().split(",")])
-
+    if part is None or part == 1:
         print(f"part 1: {part1(rules, stacks)}")
+    if part is None or part == 2:
         print(f"part 2: {part2(rules, stacks)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 5)
 

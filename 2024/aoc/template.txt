@@ -1,0 +1,22 @@
+import aoc
+
+
+def part1():
+    pass
+
+
+def part2():
+    pass
+
+
+def main(text, part=None):
+    data = text.strip()
+
+    if part is None or part == 1:
+        print(f"part 1: {part1()}")
+    if part is None or part == 2:
+        print(f"part 2: {part2()}")
+
+
+if __name__ == "__main__":
+    aoc.run(main, $day)

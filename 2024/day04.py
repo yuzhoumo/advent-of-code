@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 
 
 def search(grid, r, c, word):
@@ -42,7 +41,6 @@ def part1(grid):
                 count += search(grid, r, c, "SAMX")
     return count
 
-
 def part2(grid):
     count = 0
     for r, row in enumerate(grid):
@@ -52,17 +50,16 @@ def part2(grid):
     return count
 
 
-def main(filename):
-    with open(filename, "r") as f:
-        data = f.read().strip()
-        grid = [list(row) for row in data.splitlines()]
+def main(text, part=None):
+    data = text.strip()
+    grid = [list(row) for row in data.splitlines()]
 
+    if part is None or part == 1:
         print(f"part 1: {part1(grid)}")
+    if part is None or part == 2:
         print(f"part 2: {part2(grid)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 4)
 

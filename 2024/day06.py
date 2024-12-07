@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 
 
 def in_bound(grid, r, c):
@@ -41,6 +40,10 @@ def detect_cycle(grid, start):
     return False
 
 
+def part1(positions):
+    return len(positions)
+
+
 def part2(grid, start, positions):
     count = 0
     for r, c in positions:
@@ -51,23 +54,21 @@ def part2(grid, start, positions):
     return count
 
 
-def main(filename):
-    with open(filename, "r") as f:
-        data = f.read().strip()
-        start, grid = None, []
-        for r, row in enumerate(data.splitlines()):
-            grid.append(list(row))
-            if '^' in row:
-                start = (r, row.index('^'))
+def main(text, part=None):
+    data, grid, start = text.strip(), [], None
+    for r, row in enumerate(data.splitlines()):
+        grid.append(list(row))
+        if '^' in row:
+            start = (r, row.index('^'))
 
-        positions = get_unique_positions(grid, start)
-        print(f"part 1: {len(positions)}")
+    positions = get_unique_positions(grid, start)
 
+    if part is None or part == 1:
+        print(f"part 1: {part1(positions)}")
+    if part is None or part == 2:
         positions.remove(start)
         print(f"part 2: {part2(grid, start, positions)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 6)

@@ -1,5 +1,4 @@
-import sys
-import pathlib
+import aoc
 
 
 def check_row(row):
@@ -30,18 +29,15 @@ def part2(data):
     return count
 
 
-def main(filename):
-    data = []
-    with open(filename, "r") as f:
-        data = f.read().strip().splitlines()
-
+def main(text, part=None):
+    data = text.strip().splitlines()
     parsed = [[int(j) for j in data[i].split()] for i in range(len(data))]
 
-    print(f"part 1: {part1(parsed)}")
-    print(f"part 2: {part2(parsed)}")
+    if part is None or part == 1:
+        print(f"part 1: {part1(parsed)}")
+    if part is None or part == 1:
+        print(f"part 2: {part2(parsed)}")
 
 
 if __name__ == "__main__":
-    basename = pathlib.Path(__file__).stem
-    assert len(sys.argv) == 2, f"usage: python3 {basename} <filename>"
-    main(sys.argv[1])
+    aoc.run(main, 2)
