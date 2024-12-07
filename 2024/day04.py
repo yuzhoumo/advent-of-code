@@ -50,14 +50,10 @@ def part2(grid):
     return count
 
 
-def main(text, part=None):
+def main(text):
     data = text.strip()
     grid = [list(row) for row in data.splitlines()]
-
-    if part is None or part == 1:
-        print(f"part 1: {part1(grid)}")
-    if part is None or part == 2:
-        print(f"part 2: {part2(grid)}")
+    return part1(grid), part2(grid)
 
 
 if __name__ == "__main__":

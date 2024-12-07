@@ -13,7 +13,7 @@ def part2(l1, l2):
     return sum(n * counts.get(n, 0) for n in l1)
 
 
-def main(text, part=None):
+def main(text):
     rows = text.strip().splitlines()
     list1, list2 = [], []
     for row in rows:
@@ -21,10 +21,8 @@ def main(text, part=None):
         list1.append(int(n1))
         list2.append(int(n2))
 
-    if part is None or part == 1:
-        print(f"part 1: {part1(list1, list2)}")
-    if part is None or part == 1:
-        print(f"part 2: {part2(list1, list2)}")
+    return part1(list1, list2), \
+           part2(list1, list2)
 
 
 if __name__ == "__main__":

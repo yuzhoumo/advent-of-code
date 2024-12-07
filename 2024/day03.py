@@ -33,13 +33,9 @@ def part2(data):
     return res
 
 
-def main(text, part=None):
+def main(text):
     data = text.strip()
-
-    if part is None or part == 1:
-        print(f"part 1: {part1(data)}")
-    if part is None or part == 2:
-        print(f"part 2: {part2(data)}")
+    return part1(data), part2(data)
 
 
 if __name__ == "__main__":

@@ -54,7 +54,7 @@ def part2(grid, start, positions):
     return count
 
 
-def main(text, part=None):
+def main(text):
     data, grid, start = text.strip(), [], None
     for r, row in enumerate(data.splitlines()):
         grid.append(list(row))
@@ -62,12 +62,12 @@ def main(text, part=None):
             start = (r, row.index('^'))
 
     positions = get_unique_positions(grid, start)
+    sol1 = part1(positions)
 
-    if part is None or part == 1:
-        print(f"part 1: {part1(positions)}")
-    if part is None or part == 2:
-        positions.remove(start)
-        print(f"part 2: {part2(grid, start, positions)}")
+    positions.remove(start)
+    sol2 = part2(grid, start, positions)
+
+    return sol1, sol2
 
 
 if __name__ == "__main__":

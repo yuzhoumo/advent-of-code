@@ -22,9 +22,10 @@ def part2(rules, stacks):
     return sum(sorted(s, key=compare)[len(s)//2] for s in stacks if not is_valid(rules, s))
 
 
-def main(text, part=None):
+def main(text):
     data = text.strip()
     rules, stacks = defaultdict(list), []
+
     for line in data.splitlines():
         if "|" in line:
             a, b = line.strip().split("|")
@@ -32,10 +33,7 @@ def main(text, part=None):
         if "," in line:
             stacks.append([int(i) for i in line.strip().split(",")])
 
-    if part is None or part == 1:
-        print(f"part 1: {part1(rules, stacks)}")
-    if part is None or part == 2:
-        print(f"part 2: {part2(rules, stacks)}")
+    return part1(rules, stacks), part2(rules, stacks)
 
 
 if __name__ == "__main__":

@@ -29,14 +29,10 @@ def part2(data):
     return count
 
 
-def main(text, part=None):
+def main(text):
     data = text.strip().splitlines()
     parsed = [[int(j) for j in data[i].split()] for i in range(len(data))]
-
-    if part is None or part == 1:
-        print(f"part 1: {part1(parsed)}")
-    if part is None or part == 1:
-        print(f"part 2: {part2(parsed)}")
+    return part1(parsed), part2(parsed)
 
 
 if __name__ == "__main__":

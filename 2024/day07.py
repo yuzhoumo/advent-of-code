@@ -28,17 +28,13 @@ def part2(equations):
     return calibrate(equations, ops)
 
 
-def main(text, part=None):
+def main(text):
     data = text.strip()
     equations = []
     for line in data.splitlines():
         key, rest = line.split(":")
         equations.append([int(key), [int(n) for n in rest.split()]])
-
-    if part is None or part == 1:
-        print(f"part 1: {part1(equations)}")
-    if part is None or part == 2:
-        print(f"part 2: {part2(equations)}")
+    return part1(equations), part2(equations)
 
 
 if __name__ == "__main__":
