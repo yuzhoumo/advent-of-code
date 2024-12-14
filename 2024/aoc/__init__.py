@@ -9,10 +9,12 @@ import string
 import sys
 import time
 import webbrowser
+
+from .helpers import directions, in_bounds
 from .constants import *
 
 
-__all__ = ("make_template", "day", "submit", "run")
+__all__ = ("make_template", "day", "submit", "run", "directions", "in_bounds")
 
 
 def make_template(): # setup template for a given day
