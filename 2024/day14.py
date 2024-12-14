@@ -1,5 +1,4 @@
 import aoc
-from time import sleep
 
 
 def step(state, w, h):
@@ -21,7 +20,6 @@ def safety(state, w, h):
             counts[2] += 1
         elif p[0] > w // 2 and p[1] > h // 2:
             counts[3] += 1
-
     return counts[0] * counts[1] * counts[2] * counts[3]
 
 
@@ -33,36 +31,41 @@ def display(state, w, h):
         print(''.join(row))
 
 
-def part1(state):
-    state = state.copy()
+def part1(state, w, h):
     for _ in range(100):
-        state = step(state, 101, 103)
-    return safety(state, 101, 103)
+        state = step(state, w, h)
+    return safety(state, w, h)
 
 
-def part2(state):
-    state = state.copy()
+def part2(state, w, h):
     for i in range(10000):
         points = [p for p, _ in state]
         if len(set(points)) == len(state):
-            display(state, 101, 103)
+            display(state, w, h)
             return i
-        state = step(state, 101, 103)
+        state = step(state, w, h)
 
 
 def main(text):
     data = text.strip()
+
     state = []
     for row in data.splitlines():
         p, v = row.split()
-        x, y = p.split(',')
-        x, y = int(x[2:]), int(y)
+        xp, yp = p.split(',')
+        xp, yp = int(xp[2:]), int(yp)
 
         xv, yv = v.split(',')
         xv, yv = int(xv[2:]), int(yv)
-        state.append(((x, y), (xv, yv)))
+        state.append(((xp, yp), (xv, yv)))
 
-    return part1(state), part2(state)
+    # test input
+    # w, h = 11, 7
+
+    # real input
+    w, h = 101, 103
+
+    return part1(state, w, h), part2(state, w, h)
 
 
 if __name__ == "__main__":
