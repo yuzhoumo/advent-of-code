@@ -1,6 +1,7 @@
 import aoc
 from collections import defaultdict
 
+
 def blink(nums):
     res = []
     for n in nums:
